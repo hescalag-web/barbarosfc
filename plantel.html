@@ -7,49 +7,46 @@
 </head>
 <body>
   <header class="header">
-    <h1>Plantel</h1>
-    <nav><a href="index.html">Inicio</a></nav>
+    <img src="img/logo.png" alt="Logo Club" class="logo">
+    <h1>BÁRBAROS FC</h1>Pasión, compromiso y gloria ⚽🔥<br><br><br>
+    <nav>
+      <a href="index.html">Inicio</a><br><br><br>
+    </nav>
   </header>
 
-  <main>
-    <section class="listado">
-        <div class="container" id="plantel"></div>
-    </section>
+  <section class="listado">
+    <div class="container" id="plantel"></div>
+  </section>
     
-    <!-- Importar productos como JS -->
-    <script src="js/plantel.js"></script>
-    <script>
-        const container = document.getElementById('plantel');
-        
-        function displayProducts(filteredProducts) {
-            container.innerHTML = '';
-            filteredProducts.forEach(producto => {
-                const card = document.createElement('div');
-                card.className = 'product';
-                card.innerHTML = `
-                <img src="${producto.imagen}" alt="${producto.nombre}">
-                <h2>${producto.nombre}</h2>
-                <span>${producto.descripcion}</span></br>
-                <span>${producto.marca}</span>
-                <div class="price">${producto.precio}</div>
-                <a class="buy-btn" href="${producto.whatsapp}" target="_blank">Saber más</a>
-            `;
-            container.appendChild(card);
-            });
+  <!-- Importar productos como JS -->
+  <script src="js/plantel.js"></script>
+  <script>
+    const container = document.getElementById('plantel');
+      
+    function displayProducts(filteredProducts) {
+        container.innerHTML = '';
+        filteredProducts.forEach(plantel => {
+            const card = document.createElement('div');
+            card.className = 'product';
+            card.innerHTML = `
+            <img src="${plantel.imagen}" alt="${plantel.nombre}"><br>
+            <span><strong>${plantel.nombre}</strong></span><br>
+            <span>${plantel.descripcion}</span><br>
+            <span>${plantel.numero}</span>
+        `;
+        container.appendChild(card);
+        });
+    }
+    function filterProducts(categoria) {
+        if (categoria === 'all') {
+            displayProducts(plantel);
+        } else {
+            const filtered = plantel.filter(p => p.categorias.includes(categoria));
+            displayProducts(filtered);
         }
-
-        function filterProducts(categoria) {
-            if (categoria === 'all') {
-                displayProducts(productos);
-            } else {
-                const filtered = productos.filter(p => p.categorias.includes(categoria));
-                displayProducts(filtered);
-            }
-        }
-
-        // Mostrar todos al inicio
-        displayProducts(productos);
-        </script>
-  </main>
+    }
+    // Mostrar todos al inicio
+    displayProducts(plantel);
+  </script>
 </body>
 </html>
