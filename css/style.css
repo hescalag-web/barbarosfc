@@ -1,0 +1,75 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #000;
+  color: #FFD600;
+}
+
+header {
+  background: #111;
+  padding: 10px;
+  text-align: center;
+}
+
+header .logo {
+  width: 80px;
+}
+
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #FFD600;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: white;
+}
+
+.hero {
+  padding: 50px;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  padding: 20px;
+}
+
+.grid img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.listado {
+  padding: 20px;
+}
+
+.container {
+      max-width: 1400px; 
+      margin: 0 auto;
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      background-image: url('../imagenes/fondo.png');
+}
+
+.product {
+    background-color: rgba(255,255,255,0.95);
+    border-radius: 10px; 
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    padding: 15px; 
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.product span {
+  color: #000;
+}
+
+.product h2 {
+  color: #000;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bárbaros FC</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <img src="img/logo.png" alt="Logo Club" class="logo">
+        <h1>BÁRBAROS FC</h1>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="plantel.html">Plantel</a>
+            <a href="partidos.html">Partidos</a>
+            <a href="tabla.html">Tabla</a>
+            <a href="galeria.html">Galería</a>
+            <a href="documentos.html">Documentos</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>¡Bienvenidos a la casa de los Bárbaros!</h2>
+            <p>Pasión, compromiso y gloria ⚽</p>
+        </section>
+
+        <section class="destacado">
+            <h3>Próximo partido</h3>
+            <div id="proximo-partido"></div>
+        </section>
+
+        <section class="listado">
+            <div class="container" id="fixture"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Bárbaros FC - Todos los derechos reservados - Since 2021</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <!-- Importar productos como JS -->
+    <script>
+        const container = document.getElementById('fixture');
+        
+        function displayProducts(filteredProducts) {
+            container.innerHTML = '';
+            filteredProducts.forEach(producto => {
+                const card = document.createElement('div');
+                card.className = 'product';
+                card.innerHTML = `
+                <h2>${producto.fecha}</h2>
+                <span>${producto.rival}</span></br>
+                <span>${producto.resultado}</span>
+            `;
+            container.appendChild(card);
+            });
+        }
+
+        function filterProducts(categoria) {
+            if (categoria === 'all') {
+                displayProducts(productos);
+            } else {
+                const filtered = productos.filter(p => p.categorias.includes(categoria));
+                displayProducts(filtered);
+            }
+        }
+
+        // Mostrar todos al inicio
+        displayProducts(productos);
+        </script>
+</body>
+</html>
