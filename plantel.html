@@ -10,13 +10,25 @@
     <img src="img/logo.png" alt="Logo Club" class="logo">
     <h1>BÁRBAROS FC</h1>Pasión, compromiso y gloria ⚽🔥<br><br><br>
     <nav>
-      <a href="index.html">Inicio</a><br><br><br>
+      <a href="index.html">Volver</a><br><br><br>
     </nav>
   </header>
+
+  <div class="filter">
+    <button onclick="filterProducts('all')">Todos</button>
+    <button onclick="filterProducts('arquero')">Arqueros</button>
+    <button onclick="filterProducts('defensa')">Defensas</button>
+    <button onclick="filterProducts('medio')">Medios</button>
+    <button onclick="filterProducts('delantero')">Delanteros</button>
+  </div>
 
   <section class="listado">
     <div class="container" id="plantel"></div>
   </section>
+
+  <footer class="hero" style="color:white;">
+    <p>© 2025 Bárbaros FC - Todos los derechos reservados - Since 2021</p>
+  </footer>
     
   <!-- Importar productos como JS -->
   <script src="js/plantel.js"></script>

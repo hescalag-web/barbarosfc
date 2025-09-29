@@ -1,6 +1,6 @@
 const plantel = [
   {
-    "nombre": "Alejandro Pavez",
+    "nombre": "Alejandro Pavéz",
     "descripcion": "Director Técnico",
     "numero": "DT",
     "imagen": "img/Alejandro_Pavez.jpg",
@@ -11,7 +11,7 @@ const plantel = [
     "descripcion": "Arquero",
     "numero": "1",
     "imagen": "img/Cristofer_Urra.jpg",
-    "categorias": ["aquero", "delantero"],
+    "categorias": ["arquero"],
   },
   {
     "nombre": "Diego Cancino",
@@ -53,7 +53,7 @@ const plantel = [
     "descripcion": "Delantero",
     "numero": "9",
     "imagen": "img/Hernan_Escalante.jpg",
-    "categorias": ["aquero", "delantero"],
+    "categorias": ["arquero", "delantero"],
   },
   {
     "nombre": "Guillermo Velozo",
@@ -75,5 +75,12 @@ const plantel = [
     "numero": "13",
     "imagen": "img/Esteban_Sepulveda.jpg",
     "categorias": ["defensa", "medio"],
+  },
+  {
+    "nombre": "Diego Escobar",
+    "descripcion": "Defensa",
+    "numero": "23",
+    "imagen": "img/Diego_Escobar.jpg",
+    "categorias": ["defensa"],
   }
 ];

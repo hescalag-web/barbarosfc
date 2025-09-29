@@ -7,14 +7,53 @@
 </head>
 <body>
   <header class="header">
-    <h1>Partidos</h1>
-    <nav><a href="index.html">Inicio</a></nav>
+    <img src="img/logo.png" alt="Logo Club" class="logo">
+    <h1>BÁRBAROS FC</h1>Pasión, compromiso y gloria ⚽🔥<br><br><br>
+    <nav>
+      <a href="index.html">Volver</a><br><br><br>
+    </nav>
   </header>
 
-  <main>
-    <div id="fixture" class="listado"></div>
-  </main>
+  <section class="hero">
+    <span>Campeonato Entretiempo clausura octubre 2025 </span><br><br>
+    <div class="container" id="fixture"></div>
+  </section>
 
-  <script src="js/partidos.js"></script>
+  <footer class="hero" style="color:white;">
+    <p>© 2025 Bárbaros FC - Todos los derechos reservados - Since 2021</p>
+  </footer>
+
+  <script src="js/fixture.js"></script>
+    <!-- Importar productos como JS -->
+    <script>
+        const container = document.getElementById('fixture');
+        
+        function displayProducts(filteredProducts) {
+            container.innerHTML = '';
+            filteredProducts.forEach(fixture => {
+                const card = document.createElement('div');
+                card.className = 'product';
+                card.innerHTML = `
+                <span><strong>${fixture.rival}</strong></span><br>
+                <span>${fixture.fecha}</span><br>
+                <span>${fixture.resultado}</span><br>
+                <span>${fixture.lugar}</span>
+            `;
+            container.appendChild(card);
+            });
+        }
+
+        function filterProducts(categoria) {
+            if (categoria === 'all') {
+                displayProducts(fixture);
+            } else {
+                const filtered = fixture.filter(p => p.categorias.includes(categoria));
+                displayProducts(filtered);
+            }
+        }
+
+        // Mostrar todos al inicio
+        displayProducts(fixture);
+        </script>
 </body>
 </html>
