@@ -92,13 +92,13 @@
 
             let html = "<div class=container><table border='1' cellpadding='5'>";
             rows.forEach((row, i) => {
-                // html += "<tr>";
+                html += "<tr>";
                 row.forEach(cell => {
-                    html += i === 0 ? `<span><strong>🆚 ${cell}</strong></span><br><span>📆 ${cell}</span><br>` //<th>${cell}</th>` : `<td>${cell}</td>`;
+                    html += i === 0 ? `<th>${cell}</th>` : `<td>${cell}</td>`; //
                 });
-                //html += "</tr>";
+                html += "</tr>";
             });
-            html += "</div>";
+            html += "</tabel></div>";
 
             document.getElementById("tabla-goleadores").innerHTML = html;
         }
