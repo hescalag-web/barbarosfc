@@ -31,12 +31,21 @@
     </section>
 
     <section class="hero">
-        <h3>Próximos 10 partido</h3>
+        <h3>Últimos 10 partido</h3>
     </section>
 
     <section class="hero">
         <div class="container" id="encuentros"></div>
     </section>
+
+    <section class="hero">
+        <h3>Últimos 10 partido</h3>
+    </section>
+
+    <section class="hero">
+        <div id="tabla-goleadores"></div>
+    </section>
+    
 
     <footer class="hero" style="color:white;">
         <p>© 2025 Bárbaros FC - Todos los derechos reservados - Since 2021</p>
@@ -53,10 +62,10 @@
                 const card = document.createElement('div');
                 card.className = 'product';
                 card.innerHTML = `
-                <span><strong>${encuentros.rival}</strong></span><br>
-                <span>${encuentros.fecha}</span><br>
-                <span>${encuentros.resultado}</span><br>
-                <span>${encuentros.lugar}</span>
+                <span><strong>🆚 ${encuentros.rival}</strong></span><br>
+                <span>📆 ${encuentros.fecha}</span><br>
+                <span>🟰 ${encuentros.resultado}</span><br>
+                <span>🏟️ ${encuentros.lugar}</span>
             `;
             container.appendChild(card);
             });
@@ -73,6 +82,29 @@
 
         // Mostrar todos al inicio
         displayProducts(encuentros);
-        </script>
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+    <script>
+        async function cargarCSV() {
+            const response = await fetch("docs/goleadores.csv");
+            const text = await response.text();
+
+            const rows = text.split("\n").map(r => r.split(","));
+
+            let html = "<table border='1' cellpadding='5'>";
+            rows.forEach((row, i) => {
+                html += "<tr>";
+                row.forEach(cell => {
+                    html += i === 0 ? `<th>${cell}</th>` : `<td>${cell}</td>`;
+                });
+                html += "</tr>";
+            });
+            html += "</table>";
+
+            document.getElementById("tabla-goleadores").innerHTML = html;
+        }
+        // Ejecutar cuando cargue la página
+        cargarCSV();
+    </script>
 </body>
 </html>
