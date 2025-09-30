@@ -10,6 +10,7 @@ header {
   background: #111;
   padding: 10px;
   text-align: center;
+  width: 100%;
 }
 
 header .logo {
@@ -177,5 +178,11 @@ nav a:hover {
 .tabla tr:hover td {
   background: #333;
   transition: 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .tabla {
+    font-size: 14px; /* texto más chico en móvil */
+  }
 }
 
