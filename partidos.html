@@ -17,7 +17,7 @@
 
   <section class="hero">
     <span>Campeonato Entretiempo clausura octubre 2025 </span><br><br>
-    <div class="container" id="fixture"></div>
+    <div id="fixture" style="display:flex; justify-content:center; align-items:center;"></div>
   </section>
 
   <section class="hero">
@@ -29,64 +29,26 @@
     <p>© 2025 Bárbaros FC - Todos los derechos reservados - Since 2021</p>
   </footer>
 
-  <script src="js/fixture.js"></script>
-  <script src="js/estadisticas.js"></script>
-    <!-- Importar productos como JS -->
   <script>
-    const container = document.getElementById('fixture');
-    
-    function displayProducts(filteredProducts) {
-        container.innerHTML = '';
-        filteredProducts.forEach(fixture => {
-            const card = document.createElement('div');
-            card.className = 'product';
-            card.innerHTML = `
-            <span><strong>🆚 ${fixture.rival}</strong></span><br>
-            <span>📆 ${fixture.fecha}</span><br>
-            <span>🟰 ${fixture.resultado}</span><br>
-            <span>🏟️ ${fixture.lugar}</span>
-        `;
-        container.appendChild(card);
+    async function cargarCSV() {
+        const response = await fetch("docs/fixture_entretiempo2025.csv");
+        const text = await response.text()
+        const rows = text.split("\n").map(r => r.split(","))
+        let html = "<table class='tabla'>";
+        rows.forEach((row, i) => {
+            html += "<tr>";
+            row.forEach(cell => {
+                html += i === 0 
+                    ? `<th>${cell}</th>`
+                    : `<td>${cell}</td>`;
+            });
+            html += "</tr>";
         });
+        html += "</tabel></div>"
+        document.getElementById("fixture").innerHTML = html;
     }
-    function filterProducts(categoria) {
-        if (categoria === 'all') {
-            displayProducts(fixture);
-        } else {
-            const filtered = fixture.filter(p => p.categorias.includes(categoria));
-            displayProducts(filtered);
-        }
-    }
-    // Mostrar todos al inicio
-    displayProducts(fixture);
-  </script>
-  <script>
-    const container1 = document.getElementById('estadisticas');
-    
-    function displayProducts(filteredProducts) {
-        container1.innerHTML = '';
-        filteredProducts.forEach(estadisticas => {
-            const card = document.createElement('div');
-            card.className = 'product';
-            card.innerHTML = `
-            <span><strong>🆚 ${estadisticas.rival}</strong></span><br>
-            <span>📆 ${estadisticas.fecha}</span><br>
-            <span>🟰 ${estadisticas.resultado}</span><br>
-            <span>🏟️ ${estadisticas.lugar}</span>
-        `;
-        container1.appendChild(card);
-        });
-    }
-    function filterProducts(categoria) {
-        if (categoria === 'all') {
-            displayProducts(estadisticas);
-        } else {
-            const filtered = estadisticas.filter(p => p.categorias.includes(categoria));
-            displayProducts(filtered);
-        }
-    }
-    // Mostrar todos al inicio
-    displayProducts(estadisticas);
+    // Ejecutar cuando cargue la página
+    cargarCSV();
   </script>
 </body>
 </html>
