@@ -146,14 +146,14 @@ nav a:hover {
   text-transform: uppercase;
 }
 
-.tabla-goleadores {
+.tabla {
   width: 100%;
   border-collapse: collapse;
   overflow: hidden;
   border-radius: 10px;
 }
 
-.tabla-goleadores th {
+.tabla th {
   background: #FFD600;
   color: #000;
   text-align: center;
@@ -161,7 +161,7 @@ nav a:hover {
   font-size: 16px;
 }
 
-.tabla-goleadores td {
+.tabla td {
   background: #222;
   padding: 10px;
   text-align: center;
@@ -169,7 +169,7 @@ nav a:hover {
   font-size: 15px;
 }
 
-.tabla-goleadores tr:hover td {
+.tabla tr:hover td {
   background: #333;
   transition: 0.3s ease;
 }
