@@ -35,11 +35,32 @@ const plantel = [
     "categorias": ["defensa"],
   },
   {
-    "nombre": "Tomas Guerra",
+    "nombre": "Bernardo Figueroa",
+    "descripcion": "Defensa",
+    "numero": "4",
+    "imagen": "img/jugadores/Bernardo_Figueroa.png",
+    "categorias": ["defensa"],
+  },
+  {
+    "nombre": "Marcelo Loyola",
+    "descripcion": "Defensa",
+    "numero": "5",
+    "imagen": "img/jugadores/Marcelo_Loyola.png",
+    "categorias": ["medio", "defensa"],
+  },
+  {
+    "nombre": "Tomás Guerra",
     "descripcion": "Delantero",
     "numero": "6",
     "imagen": "img/jugadores/Tomas_Guerra.png",
     "categorias": ["medio", "delantero"],
+  },
+  {
+    "nombre": "Sebastián Ruminot",
+    "descripcion": "Medio",
+    "numero": "7",
+    "imagen": "img/jugadores/Sebastian_Ruminot.png",
+    "categorias": ["medio"],
   },
   {
     "nombre": "Ignacio Cardenas",
@@ -47,13 +68,6 @@ const plantel = [
     "numero": "7+1",
     "imagen": "img/jugadores/Ignacio_Cardenas.png",
     "categorias": ["medio", "defensa", "arquero"],
-  },
-  {
-    "nombre": "Sebastian Ruminot",
-    "descripcion": "Medio",
-    "numero": "7",
-    "imagen": "img/jugadores/Sebastian_Ruminot.png",
-    "categorias": ["medio"],
   },
   {
     "nombre": "Gonzalo Salazar",
@@ -77,7 +91,7 @@ const plantel = [
     "categorias": ["delantero", "medio"],
   },
   {
-    "nombre": "Sebastian Quezada",
+    "nombre": "Sebastián Quezada",
     "descripcion": "Delantero",
     "numero": "11",
     "imagen": "img/jugadores/Sebastian_Quezada.png",
@@ -89,6 +103,13 @@ const plantel = [
     "numero": "13",
     "imagen": "img/jugadores/Esteban_Sepulveda.png",
     "categorias": ["defensa", "medio"],
+  },
+  {
+    "nombre": "Jaime Elorza",
+    "descripcion": "Medio",
+    "numero": "16",
+    "imagen": "img/jugadores/Jaime_Elorza.png",
+    "categorias": ["medio"],
   },
   {
     "nombre": "Joel Lagos",
@@ -105,10 +126,38 @@ const plantel = [
     "categorias": ["defensa"],
   },
   {
-    "nombre": "Patricio_Ortega",
+    "nombre": "Patricio Ortega",
     "descripcion": "Medio",
     "numero": "24+7",
-    "imagen": "img/jugadores/Patricio_ORtega.png",
+    "imagen": "img/jugadores/Patricio_Ortega.png",
     "categorias": ["medio", "delantero"],
   },
+  {
+    "nombre": "Alejandro",
+    "descripcion": "Defensa",
+    "numero": "26",
+    "imagen": "img/jugadores/Alejandro_.png",
+    "categorias": ["defensa"],
+  },
+  {
+    "nombre": "Ricardo Torrejon",
+    "descripcion": "Defensa",
+    "numero": "29",
+    "imagen": "img/jugadores/Ricardo_Torrejon.png",
+    "categorias": ["medio", "defensa"],
+  },
+  {
+    "nombre": "Sebastián Bravo",
+    "descripcion": "Defensa",
+    "numero": "69",
+    "imagen": "img/jugadores/Sebastian_Bravo.png",
+    "categorias": ["medio", "defensa"],
+  },
+  {
+    "nombre": "Byron Díaz",
+    "descripcion": "Defensa",
+    "numero": "70",
+    "imagen": "img/jugadores/Byron_Diaz.png",
+    "categorias": ["medio", "defensa", "delantero"],
+  }
 ];

@@ -35,15 +35,7 @@
     </section>
 
     <section class="hero">
-        <div class="container" id="encuentros"></div>
-    </section>
-
-    <section class="hero">
-        <h3>Últimos 10 partido</h3>
-    </section>
-
-    <section class="hero">
-        <div id="tabla-goleadores"></div>
+        <div id="tabla-estadisticas"></div>
     </section>
     
 
@@ -51,46 +43,14 @@
         <p>© 2025 Bárbaros FC - Todos los derechos reservados - Since 2021</p>
     </footer>
 
-    <script src="js/ultimo_encuentros.js"></script>
-    <!-- Importar productos como JS -->
-    <script>
-        const container = document.getElementById('encuentros');
-        
-        function displayProducts(filteredProducts) {
-            container.innerHTML = '';
-            filteredProducts.forEach(encuentros => {
-                const card = document.createElement('div');
-                card.className = 'product';
-                card.innerHTML = `
-                <span><strong>🆚 ${encuentros.rival}</strong></span><br>
-                <span>📆 ${encuentros.fecha}</span><br>
-                <span>🟰 ${encuentros.resultado}</span><br>
-                <span>🏟️ ${encuentros.lugar}</span>
-            `;
-            container.appendChild(card);
-            });
-        }
-
-        function filterProducts(categoria) {
-            if (categoria === 'all') {
-                displayProducts(encuentros);
-            } else {
-                const filtered = encuentros.filter(p => p.categorias.includes(categoria));
-                displayProducts(filtered);
-            }
-        }
-
-        // Mostrar todos al inicio
-        displayProducts(encuentros);
-    </script>
     <script>
         async function cargarCSV() {
-            const response = await fetch("docs/goleadores.csv");
+            const response = await fetch("docs/estadisticas.csv");
             const text = await response.text();
 
             const rows = text.split("\n").map(r => r.split(","));
 
-            let html = "<table class='tabla-goleadores'>";
+            let html = "<table class='tabla-estadisticas'>";
             rows.forEach((row, i) => {
                 html += "<tr>";
                 row.forEach(cell => {
@@ -102,7 +62,7 @@
             });
             html += "</tabel></div>";
 
-            document.getElementById("tabla-goleadores").innerHTML = html;
+            document.getElementById("tabla-estadisticas").innerHTML = html;
         }
         // Ejecutar cuando cargue la página
         cargarCSV();
