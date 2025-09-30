@@ -127,3 +127,50 @@ nav a:hover {
   font-weight: bold;
   display: block;
 }
+
+.tabla-container {
+  margin: 40px auto;
+  max-width: 800px;
+  padding: 20px;
+  background: #111;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  color: #fff;
+}
+
+.tabla-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #FFD600;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+.tabla-goleadores {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.tabla-goleadores th {
+  background: #FFD600;
+  color: #000;
+  text-align: center;
+  padding: 12px;
+  font-size: 16px;
+}
+
+.tabla-goleadores td {
+  background: #222;
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #333;
+  font-size: 15px;
+}
+
+.tabla-goleadores tr:hover td {
+  background: #333;
+  transition: 0.3s ease;
+}
+

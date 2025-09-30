@@ -4,13 +4,13 @@ const encuentros = [
   { 
     "fecha": "2025-09-29", 
     "rival": "Ases del Balón", 
-    "resultado": "-",
+    "resultado": "10-2",
     "lugar": "Taqueral"
   },
   {
     "fecha": "2025-09-08", 
     "rival": "Unión sin Fronteras", 
-    "resultado": "13-6-",
+    "resultado": "13-6",
     "lugar": "Soccer Siete"
   },
   {

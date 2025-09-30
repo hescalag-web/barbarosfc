@@ -90,11 +90,13 @@
 
             const rows = text.split("\n").map(r => r.split(","));
 
-            let html = "<div class=container><table border='1' cellpadding='5'>";
+            let html = "<table class='tabla-goleadores'>";
             rows.forEach((row, i) => {
                 html += "<tr>";
                 row.forEach(cell => {
-                    html += i === 0 ? `<th>${cell}</th>` : `<td>${cell}</td>`; //
+                    html += i === 0 
+                        ? `<th>${cell}</th>`
+                        : `<td>${cell}</td>`;
                 });
                 html += "</tr>";
             });
