@@ -159,7 +159,7 @@ nav a:hover {
 }*/
 
 .tabla {
-  width: 60%;
+  width: 70%;
   border-collapse: collapse;
   overflow: hidden;
   border-radius: 10px;
@@ -186,9 +186,27 @@ nav a:hover {
   transition: 0.3s ease;
 }
 
-@media (max-width: auto) {
-  .tabla {
-    font-size: 12px; /* texto más chico en móvil */
+@media screen and (max-width: 768px) {
+  nav a {
+    font-size: 12px;
+  }
+
+  .tabla{
+    width: 100%;
+  }
+
+  .tabla th {
+    font-size: 10px;  /* celdas más compactas */
+  }
+
+  .tabla td {
+    padding: 6px 4px;  /* celdas más compactas */
+    white-space: nowrap; /* evita saltos feos */
+    font-size: 9px;
+  }
+
+  .hero { 
+    font-size: 12px;
   }
 }
 
