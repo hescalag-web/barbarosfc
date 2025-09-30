@@ -35,6 +35,12 @@ nav a:hover {
   font-size: 22px;
 }
 
+.footer {
+  padding: 10px;
+  text-align: center;
+  font-size: 18px;
+}
+
 .container {
   max-width: 1400px; 
   margin: 0 auto;
@@ -180,7 +186,7 @@ nav a:hover {
   transition: 0.3s ease;
 }
 
-@media (max-width: 400px) {
+@media (max-width: auto) {
   .tabla {
     font-size: 12px; /* texto más chico en móvil */
   }
