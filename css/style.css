@@ -186,6 +186,33 @@ nav a:hover {
   transition: 0.3s ease;
 }
 
+.estadisticas-box {
+  background: #111;
+  color: #FFD700; /* Amarillo Bárbaros */
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 400px;
+  margin: 20px auto;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+  text-align: left;
+  font-family: Arial, sans-serif;
+}
+
+.estadisticas-box h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.estadisticas-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.estadisticas-box li {
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+}
+
 @media screen and (max-width: 768px) {
   nav a {
     font-size: 12px;
@@ -206,6 +233,10 @@ nav a:hover {
   }
 
   .hero { 
+    font-size: 12px;
+  }
+
+  .footer { 
     font-size: 12px;
   }
 }
