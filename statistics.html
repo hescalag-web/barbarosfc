@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Estadísticas - Bárbaros FC</title>
   <link href="css/style.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
@@ -12,20 +13,17 @@
     <img src="img/logo.png" alt="Logo Club" class="logo">
     <h1>BÁRBAROS FC</h1>Pasión, compromiso y gloria ⚽🔥<br>Más que un Club una Familia<br><br>
     <nav>
-      <a href="index.html">Volver</a><br><br><br>
+      <a href="index.html">Volver</a><br><br>
     </nav>
   </header>
 
   <section class="hero">
-    <span>📊 Estadísticas</span><br><br>
-    <div id="statistics" style="display:flex; justify-content:center; align-items:center;"></div><br><br>
-    <div id="statistics-table"></div><br><br>
+    <h3>📊 Estadísticas</h3>
   </section>
 
   <section class="hero">
-    <span>Campeonato Invierno Soccer Siete Senior +30 2025</span><br><br>
-    <div id="fixture-before" style="display:flex; justify-content:center; align-items:center;"></div><br><br>
-    <div id="statistics-fixture-before"></div>
+    <div id="statistics" style="display:flex; justify-content:center; align-items:center;"></div><br><br>
+    <div id="statistics-table"></div>
   </section>
 
   <footer class="footer" style="color:white;">
@@ -35,21 +33,23 @@
   <!-- CARGA CSV TABLA ACTUAL FIXTURE-->
   <script>
     async function cargarCSV() {
-        const response = await fetch("docs/statistics.csv");
-        const text = await response.text()
-        const rows = text.split("\n").map(r => r.split(","))
-        let html = "<table class='tabla'>";
-        rows.forEach((row, i) => {
-            html += "<tr>";
-            row.forEach(cell => {
-                html += i === 0 
-                    ? `<th>${cell}</th>`
-                    : `<td>${cell}</td>`;
-            });
-            html += "</tr>";
-        });
-        html += "</tabel></div>"
-        document.getElementById("statistics").innerHTML = html;
+      const response = await fetch("docs/statistics.csv");
+      const text = await response.text();
+      const rows = text.split("\n").map(r => r.split(","));
+
+      let html = "<table class='tabla'>";
+      rows.forEach((row, i) => {
+        html += "<tr>";
+          row.forEach(cell => {
+            html += i === 0 
+            ? `<th>${cell}</th>`
+            : `<td>${cell}</td>`;
+          });
+          html += "</tr>";
+      });
+      html += "</table>";
+
+      document.getElementById("statistics").innerHTML = html;
     }
     // Ejecutar cuando cargue la página
     cargarCSV();
@@ -59,52 +59,53 @@
   <script>
     async function cargarEstadisticas() {
       const response = await fetch("docs/statistics.csv");
-      const text = await response.text()
+      const text = await response.text();
+
       // Procesar CSV
       const rows = text.trim().split("\n").map(r => r.split(","));
       const data = rows.slice(1); // sin cabecera
-              
+
       let jugados = 0, ganados = 0, empatados = 0, perdidos = 0;
-      let golesFavor = 0, golesContra = 0
+      let golesFavor = 0, golesContra = 0;
+
       data.forEach(row => {
-          jugados++;
-          const [fecha, rival, resultado, lugar] = row;
-          const [gf, gc] = resultado.split("-").map(Number)
-          golesFavor += gf;
-          golesContra += gc;
-          if (gf > gc) 
-            ganados++;
-          else if (gf < gc) 
-            perdidos++;
-          else 
-            empatados++;
-      })
+        jugados++;
+        const [fecha, rival, resultado, lugar] = row;
+        const [gf, gc] = resultado.split("-").map(Number);
+
+        golesFavor += gf;
+        golesContra += gc;
+
+        if (gf > gc) ganados++;
+        else if (gf < gc) perdidos++;
+        else empatados++;
+      });
+
       const diferencia = golesFavor - golesContra;
-      const efectividad = ((ganados * 3 + empatados) / (jugados * 3) * 100).toFixed(1)
+      const efectividad = ((ganados * 3 + empatados) / (jugados * 3) * 100).toFixed(1);
       const goalJugadosFavor = (golesFavor / jugados ).toFixed(1);
       const goalJugadosContra = (golesContra / jugados ).toFixed(1);
 
       // Generar HTML
       document.getElementById("statistics-table").innerHTML = `
-          <div class="estadisticas-box">
-            <h2>📊 Estadísticas</h2>
-            <ul>
-              <li><strong>Partidos jugados:</strong> ${jugados}</li>
-              <li><strong>Ganados:</strong> ${ganados}</li>
-              <li><strong>Empatados:</strong> ${empatados}</li>
-              <li><strong>Perdidos:</strong> ${perdidos}</li>
-              <li><strong>Goles a favor:</strong> ${golesFavor}</li>
-              <li><strong>Goles en contra:</strong> ${golesContra}</li>
-              <li><strong>Diferencia de goles:</strong> ${diferencia}</li>
-              <li><strong>Efectividad:</strong> ${efectividad}%</li>
-              <li><strong>Promedio Goles a favor:</strong> ${goalJugadosFavor}</li>
-              <li><strong>Promedio Goles en contra:</strong> ${goalJugadosContra}</li>
-            </ul>
-          </div>
+        <div class="estadisticas-box">
+          <h2>📊 Estadísticas</h2>
+          <ul>
+            <li><strong>Partidos jugados:</strong> ${jugados}</li>
+            <li><strong>Ganados:</strong> ${ganados}</li>
+            <li><strong>Empatados:</strong> ${empatados}</li>
+            <li><strong>Perdidos:</strong> ${perdidos}</li>
+            <li><strong>Goles a favor:</strong> ${golesFavor}</li>
+            <li><strong>Goles en contra:</strong> ${golesContra}</li>
+            <li><strong>Diferencia de goles:</strong> ${diferencia}</li>
+            <li><strong>Efectividad:</strong> ${efectividad}%</li>
+            <li><strong>Promedio Goles a favor:</strong> ${goalJugadosFavor}</li>
+            <li><strong>Promedio Goles en contra:</strong> ${goalJugadosContra}</li>
+          </ul>
+        </div>
       `;
     }
     cargarEstadisticas();
   </script>
-
 </body>
 </html>

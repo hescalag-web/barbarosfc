@@ -1,120 +1,117 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bárbaros FC</title>
-    <link href="css/style.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="img/favicon.png" type="image/png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bárbaros FC</title>
+  <link href="css/style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="img/favicon.png" type="image/png">
 </head>
 <body>
-    <header class="header">
-        <img src="img/logo.png" alt="Logo Club" class="logo">
-        <h1>BÁRBAROS FC</h1>
-        <nav>
-            <a href="index.html">Inicio</a>
-            <a href="squad.html">Plantel</a>
-            <a href="tournaments.html">Torneos</a>
-            <a href="statistics.html">Estadísticas</a>
-            <a href="gallery.html">Galería</a>
-            <a href="documents.html">Documentos</a>
-            <a href="history.html">Historia</a>
-            <a href="contact.html">Contacto</a>
-        </nav>
-    </header>
+  <header class="header">
+    <img src="img/logo.png" alt="Logo Club" class="logo">
+    <h1>BÁRBAROS FC</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="squad.html">Plantel</a>
+      <a href="tournaments.html">Torneos</a>
+      <a href="statistics.html">Estadísticas</a>
+      <a href="gallery.html">Galería</a>
+      <a href="documents.html">Documentos</a>
+      <a href="history.html">Historia</a>
+      <a href="contact.html">Contacto</a>
+    </nav>
+  </header>
 
-    <section class="hero" style="color:white;">
-        <h2>¡Bienvenidos a la casa de los Bárbaros!</h2>
-        <p>Pasión, compromiso y gloria ⚽🔥<br>Una gran familia unida dentro y fuera de la cancha, que comparte triunfos y derrotas, pero siempre con orgullo, amistad y 
+  <section class="hero" style="color:white;">
+    <h2>¡Bienvenidos a la casa de los Bárbaros!</h2>
+    <p>Pasión, compromiso y gloria ⚽🔥<br>Una gran familia unida dentro y fuera de la cancha, que comparte triunfos y derrotas, pero siempre con orgullo, amistad y 
         mucho corazón.<br>Aquí se viven momentos inolvidables: risas, esfuerzo, compañerismo y esos inolvidables 3er tiempos que nos hacen únicos.<br></p>
-        <p>💛🖤Porque ser <strong>Bárbaros</strong> no es solo jugar al fútbol… ¡es llevar una forma de vida llena de garra, lealtad y hermandad! 💛🖤</p>
-        <p>💛🖤Pooooorque enrolamos y tenemos sed..... Bárbaros FC!!💛🖤</p>
-    </section>
+    <p>💛🖤Porque ser <strong>Bárbaros</strong> no es solo jugar al fútbol… ¡es llevar una forma de vida llena de garra, lealtad y hermandad! 💛🖤</p>
+    <p>💛🖤Pooooorque enrolamos y tenemos sed..... Bárbaros FC!!💛🖤</p>
+  </section>
 
-    <section class="hero">
-        <h3>Últimos 10 partido</h3>
-    </section>
+  <section class="hero">
+    <h3>Últimos 10 partido</h3>
+  </section>
 
-    <section class="hero">
-        <div id="table-last" style="display:flex; justify-content:center; align-items:center;"></div><br><br>
-        <div id="statistics-last"></div>
-    </section>
-    
-    <footer class="footer" style="color:white;">
-        <p>© 2025 Bárbaros FC - Todos los derechos reservados - Since 2021</p>
-    </footer>
+  <section class="hero">
+    <div id="table-last" style="display:flex; justify-content:center; align-items:center;"></div><br><br>
+    <div id="statistics-last"></div>
+  </section>
+  <footer class="footer" style="color:white;">
+    <p>© 2025 Bárbaros FC - Todos los derechos reservados - Since 2021</p>
+  </footer>
 
-    <script>
-        async function cargarCSV() {
-            const response = await fetch("docs/last_games.csv");
-            const text = await response.text();
+  <script>
+    async function cargarCSV() {
+      const response = await fetch("docs/last_games.csv");
+      const text = await response.text();
+      const rows = text.split("\n").map(r => r.split(","));
 
-            const rows = text.split("\n").map(r => r.split(","));
+      let html = "<table class='tabla'>";
+      rows.forEach((row, i) => {
+        html += "<tr>";
+          row.forEach(cell => {
+            html += i === 0 
+            ? `<th>${cell}</th>`
+            : `<td>${cell}</td>`;
+          });
+          html += "</tr>";
+      });
+      html += "</table>";
 
-            let html = "<table class='tabla'>";
-            rows.forEach((row, i) => {
-                html += "<tr>";
-                row.forEach(cell => {
-                    html += i === 0 
-                        ? `<th>${cell}</th>`
-                        : `<td>${cell}</td>`;
-                });
-                html += "</tr>";
-            });
-            html += "</tabel>";
+      document.getElementById("table-last").innerHTML = html;
+    }
+    // Ejecutar cuando cargue la página
+    cargarCSV();
+  </script>
+  <script>
+    async function cargarEstadisticas() {
+      const response = await fetch("docs/last_games.csv");
+      const text = await response.text();
 
-            document.getElementById("table-last").innerHTML = html;
-        }
-        // Ejecutar cuando cargue la página
-        cargarCSV();
-    </script>
-    <script>
-        async function cargarEstadisticas() {
-            const response = await fetch("docs/last_games.csv");
-            const text = await response.text();
+      // Procesar CSV
+      const rows = text.trim().split("\n").map(r => r.split(","));
+      const data = rows.slice(1); // sin cabecera
 
-            // Procesar CSV
-            const rows = text.trim().split("\n").map(r => r.split(","));
-            const data = rows.slice(1); // sin cabecera
-                    
-            let jugados = 0, ganados = 0, empatados = 0, perdidos = 0;
-            let golesFavor = 0, golesContra = 0;
+      let jugados = 0, ganados = 0, empatados = 0, perdidos = 0;
+      let golesFavor = 0, golesContra = 0;
 
-            data.forEach(row => {
-                jugados++;
-                const [fecha, rival, resultado, lugar] = row;
-                const [gf, gc] = resultado.split("-").map(Number);
+      data.forEach(row => {
+        jugados++;
+        const [fecha, rival, resultado, lugar] = row;
+        const [gf, gc] = resultado.split("-").map(Number);
 
-                golesFavor += gf;
-                golesContra += gc;
+        golesFavor += gf;
+        golesContra += gc;
 
-                if (gf > gc) ganados++;
-                else if (gf < gc) perdidos++;
-                else empatados++;
-            });
+        if (gf > gc) ganados++;
+        else if (gf < gc) perdidos++;
+        else empatados++;
+      });
 
-            const diferencia = golesFavor - golesContra;
-            const efectividad = ((ganados * 3 + empatados) / (jugados * 3) * 100).toFixed(1);
-
-            // Generar HTML
-            document.getElementById("statistics-last").innerHTML = `
-                <div class="estadisticas-box">
-                  <h2>📊 Estadísticas</h2>
-                  <ul>
-                    <li><strong>Partidos jugados:</strong> ${jugados}</li>
-                    <li><strong>Ganados:</strong> ${ganados}</li>
-                    <li><strong>Empatados:</strong> ${empatados}</li>
-                    <li><strong>Perdidos:</strong> ${perdidos}</li>
-                    <li><strong>Goles a favor:</strong> ${golesFavor}</li>
-                    <li><strong>Goles en contra:</strong> ${golesContra}</li>
-                    <li><strong>Diferencia de goles:</strong> ${diferencia}</li>
-                    <li><strong>Efectividad:</strong> ${efectividad}%</li>
-                  </ul>
-                </div>
-            `;
-        }
-        cargarEstadisticas();
-    </script>
+      const diferencia = golesFavor - golesContra;
+      const efectividad = ((ganados * 3 + empatados) / (jugados * 3) * 100).toFixed(1);
+      // Generar HTML
+      document.getElementById("statistics-last").innerHTML = `
+        <div class="estadisticas-box">
+          <h2>📊 Estadísticas</h2>
+          <ul>
+            <li><strong>Partidos jugados:</strong> ${jugados}</li>
+            <li><strong>Ganados:</strong> ${ganados}</li>
+            <li><strong>Empatados:</strong> ${empatados}</li>
+            <li><strong>Perdidos:</strong> ${perdidos}</li>
+            <li><strong>Goles a favor:</strong> ${golesFavor}</li>
+            <li><strong>Goles en contra:</strong> ${golesContra}</li>
+            <li><strong>Diferencia de goles:</strong> ${diferencia}</li>
+            <li><strong>Efectividad:</strong> ${efectividad}%</li>
+          </ul>
+        </div>
+      `;
+    }
+    cargarEstadisticas();
+  </script>
 </body>
 </html>
