@@ -5,6 +5,7 @@ const plantel = [
     "numero": "DT",
     "imagen": "img/jugadores/Alejandro_Pavez.png",
     "categorias": ["dt"],
+    "estado": "inactivo"
   },
   {
     "nombre": "Rodrigo Vilches",
@@ -12,6 +13,7 @@ const plantel = [
     "numero": "DT",
     "imagen": "img/jugadores/Rodrigo_Vilches.png",
     "categorias": ["dt"],
+    "estado": "activo"
   },
   {
     "nombre": "Cristofer Urra",
@@ -19,6 +21,7 @@ const plantel = [
     "numero": "1",
     "imagen": "img/jugadores/Cristofer_Urra.png",
     "categorias": ["arquero"],
+    "estado": "activo"
   },
   {
     "nombre": "Diego Cancino",
@@ -26,6 +29,7 @@ const plantel = [
     "numero": "2",
     "imagen": "img/jugadores/Diego_Cancino.png",
     "categorias": ["medio", "delantero"],
+    "estado": "activo"
   },
   {
     "nombre": "Daniel Moya",
@@ -33,6 +37,7 @@ const plantel = [
     "numero": "3",
     "imagen": "img/jugadores/Daniel_Moya.png",
     "categorias": ["defensa"],
+    "estado": "activo"
   },
   {
     "nombre": "Bernardo Figueroa",
@@ -40,6 +45,7 @@ const plantel = [
     "numero": "4",
     "imagen": "img/jugadores/Bernardo_Figueroa.png",
     "categorias": ["defensa"],
+    "estado": "inactivo"
   },
   {
     "nombre": "Marcelo Loyola",
@@ -47,6 +53,7 @@ const plantel = [
     "numero": "5",
     "imagen": "img/jugadores/Marcelo_Loyola.png",
     "categorias": ["medio", "defensa"],
+    "estado": "activo"
   },
   {
     "nombre": "Tomás Guerra",
@@ -54,6 +61,7 @@ const plantel = [
     "numero": "6",
     "imagen": "img/jugadores/Tomas_Guerra.png",
     "categorias": ["medio", "delantero"],
+    "estado": "inactivo"
   },
   {
     "nombre": "Sebastián Ruminot",
@@ -61,6 +69,7 @@ const plantel = [
     "numero": "7",
     "imagen": "img/jugadores/Sebastian_Ruminot.png",
     "categorias": ["medio"],
+    "estado": "activo"
   },
   {
     "nombre": "Ignacio Cardenas",
@@ -68,6 +77,7 @@ const plantel = [
     "numero": "7+1",
     "imagen": "img/jugadores/Ignacio_Cardenas.png",
     "categorias": ["medio", "defensa", "arquero"],
+    "estado": "inactivo"
   },
   {
     "nombre": "Gonzalo Salazar",
@@ -75,6 +85,7 @@ const plantel = [
     "numero": "8",
     "imagen": "img/jugadores/Gonzalo_Salazar.png",
     "categorias": ["medio"],
+    "estado": "inactivo"
   },
   {
     "nombre": "Hernán Escalante",
@@ -82,6 +93,7 @@ const plantel = [
     "numero": "9",
     "imagen": "img/jugadores/Hernan_Escalante.png",
     "categorias": ["arquero", "delantero"],
+    "estado": "activo"
   },
   {
     "nombre": "Guillermo Velozo",
@@ -89,6 +101,7 @@ const plantel = [
     "numero": "10",
     "imagen": "img/jugadores/Guillermo_Velozo.png",
     "categorias": ["delantero", "medio"],
+    "estado": "activo"
   },
   {
     "nombre": "Sebastián Quezada",
@@ -96,6 +109,7 @@ const plantel = [
     "numero": "11",
     "imagen": "img/jugadores/Sebastian_Quezada.png",
     "categorias": ["delantero"],
+    "estado": "activo"
   },
   {
     "nombre": "Esteban Sepulveda",
@@ -103,6 +117,7 @@ const plantel = [
     "numero": "13",
     "imagen": "img/jugadores/Esteban_Sepulveda.png",
     "categorias": ["defensa", "medio"],
+    "estado": "activo"
   },
   {
     "nombre": "Jaime Elorza",
@@ -110,6 +125,7 @@ const plantel = [
     "numero": "16",
     "imagen": "img/jugadores/Jaime_Elorza.png",
     "categorias": ["medio"],
+    "estado": "activo"
   },
   {
     "nombre": "Joel Lagos",
@@ -117,6 +133,7 @@ const plantel = [
     "numero": "18",
     "imagen": "img/jugadores/Joel_Lagos.png",
     "categorias": ["defensa", "medio", "delantero"],
+    "estado": "activo"
   },
   {
     "nombre": "Diego Escobar",
@@ -124,6 +141,7 @@ const plantel = [
     "numero": "23",
     "imagen": "img/jugadores/Diego_Escobar.png",
     "categorias": ["defensa"],
+    "estado": "inactivo"
   },
   {
     "nombre": "Patricio Ortega",
@@ -131,6 +149,7 @@ const plantel = [
     "numero": "24+7",
     "imagen": "img/jugadores/Patricio_Ortega.png",
     "categorias": ["medio", "delantero"],
+    "estado": "activo"
   },
   {
     "nombre": "Alejandro",
@@ -138,6 +157,7 @@ const plantel = [
     "numero": "26",
     "imagen": "img/jugadores/Alejandro_.png",
     "categorias": ["defensa"],
+    "estado": "inactivo"
   },
   {
     "nombre": "Ricardo Torrejon",
@@ -145,6 +165,7 @@ const plantel = [
     "numero": "29",
     "imagen": "img/jugadores/Ricardo_Torrejon.png",
     "categorias": ["medio", "defensa"],
+    "estado": "activo"
   },
   {
     "nombre": "Sebastián Bravo",
@@ -152,6 +173,7 @@ const plantel = [
     "numero": "69",
     "imagen": "img/jugadores/Sebastian_Bravo.png",
     "categorias": ["medio", "defensa"],
+    "estado": "activo"
   },
   {
     "nombre": "Byron Díaz",
@@ -159,5 +181,6 @@ const plantel = [
     "numero": "70",
     "imagen": "img/jugadores/Byron_Diaz.png",
     "categorias": ["medio", "defensa", "delantero"],
+    "estado": "inactivo"
   }
 ];

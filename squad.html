@@ -42,10 +42,11 @@
             const card = document.createElement('div');
             card.className = 'product';
             card.innerHTML = `
-            <img src="${plantel.imagen}" alt="${plantel.nombre}"><br>
+            <img src="${plantel.imagen}" alt="${plantel.nombre}" class="${plantel.estado === 'inactivo' ? 'bn' : ''}"><br>
             <span><strong>${plantel.nombre}</strong></span><br>
             <span>${plantel.descripcion}</span><br>
-            <span>${plantel.numero}</span>
+            <span>${plantel.numero}</span><br>
+            <span class="estado ${plantel.estado}">${plantel.estado === 'activo' ? '✅ Activo' : '❌ Inactivo'}</span>
         `;
         container.appendChild(card);
         });

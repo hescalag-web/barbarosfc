@@ -46,7 +46,7 @@
 
     <script>
         async function cargarCSV() {
-            const response = await fetch("docs/estadisticas.csv");
+            const response = await fetch("docs/last_games.csv");
             const text = await response.text();
 
             const rows = text.split("\n").map(r => r.split(","));

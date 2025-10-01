@@ -95,17 +95,20 @@ nav a:hover {
 
 .filter { 
   text-align: center; 
-  margin: 20px 0; 
+  margin: 20px 0;
 }
 
 .filter button {
   margin: 0 5px; 
   padding: 10px 15px; 
   border: none;
-  background-color: #fef702; 
+  background-color: #ffda00; 
   color: black;
+  font-size: 18px;
   border-radius: 5px; 
   cursor: pointer;
+  width: 150px;
+  height: 50px;
 }
 
 .filter button:hover { 
@@ -211,6 +214,31 @@ nav a:hover {
 .estadisticas-box li {
   padding: 6px 0;
   border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+/* B/N si está inactivo */
+.bn {
+  filter: grayscale(100%) brightness(70%);
+}
+
+/* Estado como etiqueta */
+.estado {
+  display: inline-block;
+  margin-top: 5px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.estado.activo {
+  background: #28a745; /* verde */
+  color: white;
+}
+
+.estado.inactivo {
+  background: #dc3545; /* rojo */
+  color: white;
 }
 
 @media screen and (max-width: 768px) {
