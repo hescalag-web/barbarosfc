@@ -17,14 +17,14 @@
 
   <section class="hero">
     <span>Campeonato Entretiempo Senior +30 2025 </span><br><br>
-    <div id="fixture" style="display:flex; justify-content:center; align-items:center;"></div><br><br>
-    <div id="estadisticas-fixture"></div><br><br>
+    <div id="fixture-current" style="display:flex; justify-content:center; align-items:center;"></div><br><br>
+    <div id="statistics-fixture-current"></div><br><br>
   </section>
 
   <section class="hero">
     <span>Campeonato Invierno Soccer Siete Senior +30 2025</span><br><br>
-    <div id="partidos" style="display:flex; justify-content:center; align-items:center;"></div><br><br>
-    <div id="estadisticas-partidos"></div>
+    <div id="fixture-before" style="display:flex; justify-content:center; align-items:center;"></div><br><br>
+    <div id="statistics-fixture-before"></div>
   </section>
 
   <footer class="footer" style="color:white;">
@@ -34,7 +34,7 @@
   <!-- CARGA CSV TABLA ACTUAL FIXTURE-->
   <script>
     async function cargarCSV() {
-        const response = await fetch("docs/fixture_entretiempo2025.csv");
+        const response = await fetch("docs/fixture_current_tournament.csv");
         const text = await response.text()
         const rows = text.split("\n").map(r => r.split(","))
         let html = "<table class='tabla'>";
@@ -48,7 +48,7 @@
             html += "</tr>";
         });
         html += "</tabel></div>"
-        document.getElementById("fixture").innerHTML = html;
+        document.getElementById("fixture-current").innerHTML = html;
     }
     // Ejecutar cuando cargue la página
     cargarCSV();
@@ -57,7 +57,7 @@
   <!-- CARGA CSV TABLA ESTADISTICAS ACTUAL ESTADISTICAS-FIXTURE-->
   <script>
     async function cargarEstadisticas() {
-      const response = await fetch("docs/fixture_entretiempo2025.csv");
+      const response = await fetch("docs/fixture_current_tournament.csv");
       const text = await response.text()
       // Procesar CSV
       const rows = text.trim().split("\n").map(r => r.split(","));
@@ -81,7 +81,7 @@
       const diferencia = golesFavor - golesContra;
       const efectividad = ((ganados * 3 + empatados) / (jugados * 3) * 100).toFixed(1)
       // Generar HTML
-      document.getElementById("estadisticas-fixture").innerHTML = `
+      document.getElementById("statistics-fixture-current").innerHTML = `
           <div class="estadisticas-box">
             <h2>📊 Estadísticas</h2>
             <ul>
@@ -103,7 +103,7 @@
 <!-- CARGA CSV TABLA ANTERIOR PARTIDOS-->
   <script>
     async function cargarCSV() {
-        const response = await fetch("docs/fixture_campeonatoAnterior.csv");
+        const response = await fetch("docs/fixture_before_tournament.csv");
         const text = await response.text()
         const rows = text.split("\n").map(r => r.split(","))
         let html = "<table class='tabla'>";
@@ -117,7 +117,7 @@
             html += "</tr>";
         });
         html += "</tabel></div>"
-        document.getElementById("partidos").innerHTML = html;
+        document.getElementById("fixture-before").innerHTML = html;
     }
     // Ejecutar cuando cargue la página
     cargarCSV();
@@ -126,7 +126,7 @@
   <!-- CARGA CSV TABLA ESTADISTICAS ANTERIOR ESTADISTICAS-PARTIDOS-->
   <script>
     async function cargarEstadisticas() {
-        const response = await fetch("docs/fixture_campeonatoAnterior.csv");
+        const response = await fetch("docs/fixture_before_tournament.csv");
         const text = await response.text()
         // Procesar CSV
         const rows = text.trim().split("\n").map(r => r.split(","));
@@ -147,7 +147,7 @@
         const diferencia = golesFavor - golesContra;
         const efectividad = ((ganados * 3 + empatados) / (jugados * 3) * 100).toFixed(1)
         // Generar HTML
-        document.getElementById("estadisticas-partidos").innerHTML = `
+        document.getElementById("statistics-fixture-before").innerHTML = `
             <div class="estadisticas-box">
               <h2>📊 Estadísticas</h2>
               <ul>

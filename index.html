@@ -15,7 +15,7 @@
         <nav>
             <a href="index.html">Inicio</a>
             <a href="squad.html">Plantel</a>
-            <a href="tournament.html">Partidos</a>
+            <a href="tournaments.html">Partidos</a>
             <a href="tabla.html">Tabla</a>
             <a href="gallery.html">Galería</a>
             <a href="documents.html">Documentos</a>
@@ -36,8 +36,8 @@
     </section>
 
     <section class="hero">
-        <div id="tabla-estadisticas" style="display:flex; justify-content:center; align-items:center;"></div><br><br>
-        <div id="estadisticas"></div>
+        <div id="table-last" style="display:flex; justify-content:center; align-items:center;"></div><br><br>
+        <div id="estadisticas-last"></div>
     </section>
     
     <footer class="footer" style="color:white;">
@@ -63,14 +63,14 @@
             });
             html += "</tabel>";
 
-            document.getElementById("tabla-estadisticas").innerHTML = html;
+            document.getElementById("table-last").innerHTML = html;
         }
         // Ejecutar cuando cargue la página
         cargarCSV();
     </script>
     <script>
         async function cargarEstadisticas() {
-            const response = await fetch("docs/estadisticas.csv");
+            const response = await fetch("docs/last_games.csv");
             const text = await response.text();
 
             // Procesar CSV
@@ -97,7 +97,7 @@
             const efectividad = ((ganados * 3 + empatados) / (jugados * 3) * 100).toFixed(1);
 
             // Generar HTML
-            document.getElementById("estadisticas").innerHTML = `
+            document.getElementById("estadisticas-last").innerHTML = `
                 <div class="estadisticas-box">
                   <h2>📊 Estadísticas</h2>
                   <ul>
