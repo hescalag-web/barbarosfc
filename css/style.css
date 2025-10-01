@@ -100,7 +100,7 @@ nav a:hover {
 
 .filter button {
   margin: 0 5px; 
-  padding: 10px 15px; 
+  padding: 10px 10px; 
   border: none;
   background-color: #ffda00; 
   color: black;
@@ -273,5 +273,13 @@ nav a:hover {
     font-size: 12px;
     padding-left: 10px;
   }
-}
 
+  .filter button {
+    width: 60px;
+    height: 35px;
+    font-size: 10px;
+    text-align: center;
+    padding: 5px 5px;
+    margin: 5px 5px;
+  }
+}
