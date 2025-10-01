@@ -242,6 +242,10 @@ nav a:hover {
 }
 
 @media screen and (max-width: 768px) {
+  header h2 {
+    font-size: 18px;
+  }
+
   nav a {
     font-size: 12px;
   }
@@ -264,10 +268,6 @@ nav a:hover {
     font-size: 12px;
   }
 
-  .footer { 
-    font-size: 12px;
-  }
-
   .container {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     font-size: 12px;
@@ -281,5 +281,10 @@ nav a:hover {
     text-align: center;
     padding: 5px 5px;
     margin: 5px 5px;
+  }
+
+  .footer {
+    font-size: 12px;
+    align-items: center;       /* centra vertical */
   }
 }
