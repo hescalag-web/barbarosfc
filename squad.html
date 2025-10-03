@@ -54,7 +54,10 @@
             const card = document.createElement('div');
             card.className = 'product';
             card.innerHTML = `
-            <img src="${plantel.imagen}" alt="${plantel.nombre}" class="${plantel.estado === 'inactivo' ? 'bn' : ''}"><br>
+            <span class="tooltip">
+              <img src="${plantel.imagen}" alt="${plantel.nombre}" class="${plantel.estado === 'inactivo' ? 'bn' : ''}">
+              <span class="tooltiptext">${plantel.nombre}</span>
+            </span><br>
             <span><strong>${plantel.nombre}</strong></span><br>
             <span>${plantel.descripcion}</span><br>
             <span>${plantel.numero}</span><br>

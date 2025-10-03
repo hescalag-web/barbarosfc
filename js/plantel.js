@@ -208,7 +208,7 @@ const plantel = [
     "estado": "inactivo"
   },
   {
-    "nombre": "Leonardo Gúzman",
+    "nombre": "Leonardo Guzmán",
     "descripcion": "Medio",
     "numero": "65",
     "imagen": "img/jugadores/Leonardo_Guzman.png",
