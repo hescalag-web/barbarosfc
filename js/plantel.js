@@ -16,12 +16,28 @@ const plantel = [
     "estado": "activo"
   },
   {
+    "nombre": "Juan Ignacio",
+    "descripcion": "Kinesiologo",
+    "numero": "KN",
+    "imagen": "img/jugadores/Juan_Ignacio.png",
+    "categorias": ["kn"],
+    "estado": "activo"
+  },
+  {
     "nombre": "Cristofer Urra",
     "descripcion": "Arquero",
     "numero": "1",
     "imagen": "img/jugadores/Cristofer_Urra.png",
     "categorias": ["arquero"],
     "estado": "activo"
+  },
+  {
+    "nombre": "Gabriel Saldaña",
+    "descripcion": "Arquero",
+    "numero": "1",
+    "imagen": "img/jugadores/Gabriel_Saldaña.png",
+    "categorias": ["arquero"],
+    "estado": "inactivo"
   },
   {
     "nombre": "Diego Cancino",
@@ -112,6 +128,14 @@ const plantel = [
     "estado": "activo"
   },
   {
+    "nombre": "Gonzalo Rojas",
+    "descripcion": "Defensa",
+    "numero": "12",
+    "imagen": "img/jugadores/Gonzalo_Rojas.png",
+    "categorias": ["defensa"],
+    "estado": "inactivo"
+  },
+  {
     "nombre": "Esteban Sepulveda",
     "descripcion": "Medio",
     "numero": "13",
@@ -134,6 +158,14 @@ const plantel = [
     "imagen": "img/jugadores/Joel_Lagos.png",
     "categorias": ["defensa", "medio", "delantero"],
     "estado": "activo"
+  },
+  {
+    "nombre": "Matías Ramos",
+    "descripcion": "Defensa",
+    "numero": "20",
+    "imagen": "img/jugadores/Matias_Ramos.png",
+    "categorias": ["defensa", "medio", "delantero"],
+    "estado": "inactivo"
   },
   {
     "nombre": "Diego Escobar",
@@ -166,6 +198,22 @@ const plantel = [
     "imagen": "img/jugadores/Ricardo_Torrejon.png",
     "categorias": ["medio", "defensa"],
     "estado": "activo"
+  },
+  {
+    "nombre": "Gerson Roa",
+    "descripcion": "Arquero",
+    "numero": "30",
+    "imagen": "img/jugadores/Gerson_Roa.png",
+    "categorias": ["arquero"],
+    "estado": "inactivo"
+  },
+  {
+    "nombre": "Leonardo Gúzman",
+    "descripcion": "Medio",
+    "numero": "65",
+    "imagen": "img/jugadores/Leonardo_Guzman.png",
+    "categorias": ["medio"],
+    "estado": "inactivo"
   },
   {
     "nombre": "Sebastián Bravo",
