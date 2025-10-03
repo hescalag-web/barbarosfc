@@ -23,7 +23,8 @@
   </section>
 
   <section class="hero">
-    <div id="statistics" style="display:flex; justify-content:center; align-items:center;"></div><br><br>
+    <div id="statistics" style="display:flex; justify-content:center; align-items:center;"></div><br>
+    <div id="statistics-scorer" style="display:flex; justify-content:center; align-items:center;"></div><br>
     <div id="statistics-table"></div>
   </section>
 
@@ -40,7 +41,32 @@
     <p>© 2025 Bárbaros FC - Todos los derechos reservados - Since 2021</p>
   </footer>
 
-  <!-- CARGA CSV TABLA ACTUAL FIXTURE-->
+  <!-- CARGA CSV TABLA GOLEADORES-->
+  <script>
+    async function cargarCSV() {
+      const response = await fetch("docs/statistics_scorer.csv");
+      const text = await response.text();
+      const rows = text.split("\n").map(r => r.split(","));
+
+      let html = "<table class='tabla'>";
+      rows.forEach((row, i) => {
+        html += "<tr>";
+          row.forEach(cell => {
+            html += i === 0 
+            ? `<th>${cell}</th>`
+            : `<td>${cell}</td>`;
+          });
+          html += "</tr>";
+      });
+      html += "</table>";
+
+      document.getElementById("statistics").innerHTML = html;
+    }
+    // Ejecutar cuando cargue la página
+    cargarCSV();
+  </script>
+
+  <!-- CARGA CSV TABLA HISTORICO-->
   <script>
     async function cargarCSV() {
       const response = await fetch("docs/statistics.csv");
@@ -59,7 +85,7 @@
       });
       html += "</table>";
 
-      document.getElementById("statistics").innerHTML = html;
+      document.getElementById("statistics-scorer").innerHTML = html;
     }
     // Ejecutar cuando cargue la página
     cargarCSV();
