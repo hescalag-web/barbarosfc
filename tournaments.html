@@ -25,6 +25,7 @@
   <section class="hero">    
     <div id="fixture-current" style="display:flex; justify-content:center; align-items:center;"></div><br>
     <div id="statistics-fixture-current"></div>
+    <div id="current-scorer" style="display:flex; justify-content:center; align-items:center;"></div><br>
   </section>
 
   <section class="hero">
@@ -48,6 +49,31 @@
     <img src="img/auspiciadores/Gussta.png" alt="Gussta" width="100px">
     <p>© 2025 Bárbaros FC - Todos los derechos reservados - Since 2021</p>
   </footer>
+
+  <!-- CARGA CSV TABLA GOLEADORES-->
+  <script>
+    async function cargarCSV() {
+      const response = await fetch("docs/current_scorer.csv");
+      const text = await response.text();
+      const rows = text.split("\n").map(r => r.split(","));
+
+      let html = "<table class='tabla'>";
+      rows.forEach((row, i) => {
+        html += "<tr>";
+          row.forEach(cell => {
+            html += i === 0 
+            ? `<th>${cell}</th>`
+            : `<td>${cell}</td>`;
+          });
+          html += "</tr>";
+      });
+      html += "</table>";
+
+      document.getElementById("current-scorer").innerHTML = html;
+    }
+    // Ejecutar cuando cargue la página
+    cargarCSV();
+  </script>
 
   <!-- CARGA CSV TABLA ACTUAL FIXTURE-->
   <script>
