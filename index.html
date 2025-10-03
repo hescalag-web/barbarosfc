@@ -7,6 +7,8 @@
   <link href="css/style.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <link rel="icon" href="img/favicon.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 <body>
   <header class="header">
@@ -21,6 +23,7 @@
       <a href="documents.html">Documentos</a>
       <a href="history.html">Historia</a>
       <a href="contact.html">Contacto</a>
+      <a href="login.html">Admin</a>
     </nav>
   </header>
 
@@ -33,6 +36,14 @@
   </section>
 
   <section class="hero">
+    <h3>Próximo Partido</h3>
+  </section>
+
+  <section class="hero">
+    <div id="table-next" style="display:flex; justify-content:center; align-items:center;"></div><br><br>
+  </section>
+  
+  <section class="hero">
     <h3>Últimos 10 partido</h3>
   </section>
 
@@ -41,11 +52,41 @@
     <div id="statistics-last"></div>
   </section>
   <footer class="footer" style="color:white;">
+    <div class="social-icons">
+      Siguenos en<br> 
+      <a href="https://www.instagram.com/fcbarbaros21?igsh=MTJmY3p4YW1nNzM1Yg==" target="_blank">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
     <p>Auspiciadores</p>
     <img src="img/auspiciadores/metalMaf_light.png" alt="metalMaf" width="180px" style="margin-right:50px;">
     <img src="img/auspiciadores/Gussta.png" alt="Gussta" width="100px">
     <p>© 2025 Bárbaros FC - Todos los derechos reservados - Since 2021</p>
   </footer>
+
+  <script>
+    async function cargarCSV() {
+      const response = await fetch("docs/next_games.csv");
+      const text = await response.text();
+      const rows = text.split("\n").map(r => r.split(","));
+
+      let html = "<table class='tabla'>";
+      rows.forEach((row, i) => {
+        html += "<tr>";
+          row.forEach(cell => {
+            html += i === 0 
+            ? `<th>${cell}</th>`
+            : `<td>${cell}</td>`;
+          });
+          html += "</tr>";
+      });
+      html += "</table>";
+
+      document.getElementById("table-next").innerHTML = html;
+    }
+    // Ejecutar cuando cargue la página
+    cargarCSV();
+  </script>
 
   <script>
     async function cargarCSV() {

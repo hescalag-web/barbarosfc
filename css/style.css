@@ -241,6 +241,53 @@ nav a:hover {
   color: white;
 }
 
+/*LOGIN*/
+.login-box {
+  background: #333;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+input {
+  display: block;
+  margin: 10px auto;
+  padding: 8px;
+  width: 200px;
+}
+    
+button {
+  background: yellow;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.logout-btn {
+  background: red;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #fff;
+}
+
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons a {
+  color: #FFD700; /* amarillo */
+  margin: 0 10px;
+  font-size: 35px;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  color: #fff; /* blanco al pasar el mouse */
+}
+
 @media screen and (max-width: 768px) {
   header h2 {
     font-size: 18px;

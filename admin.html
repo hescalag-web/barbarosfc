@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administración - Bárbaros FC</title>
+  <link href="css/style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="img/favicon.png" type="image/png">
+</head>
+<body>
+  <header class="header">
+    <img src="img/logo.png" alt="Logo Club" class="logo">
+    <h1>BÁRBAROS FC</h1>Pasión, compromiso y gloria ⚽🔥<br>Más que un Club una Familia<h2 style="color:white;">ADMINISTRACIÓN</h2>
+  </header>
+
+  <div class="login-box">
+    <h1>⚽ Panel de Administración</h1>
+    <p>Bienvenido al área privada de gestión del club</p>
+    <button class="logout-btn" onclick="logout()">Cerrar Sesión</button>
+  </div>
+
+  <h2>Administrador de CSV</h2>
+  <input type="file" id="csvFile" accept=".csv"><br><br>
+  <div id="csvTable"></div>
+  <button id="downloadBtn" style="display:none;">Descargar CSV actualizado</button>
+
+  <script>
+    const fileInput = document.getElementById("csvFile");
+    const tableDiv = document.getElementById("csvTable");
+    const downloadBtn = document.getElementById("downloadBtn");
+    let csvData = [];
+
+    // 📂 Cargar CSV
+    fileInput.addEventListener("change", async (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      const text = await file.text();
+      csvData = text.trim().split("\n").map(r => r.split(","));
+      renderTable();
+    });
+
+    // 📊 Mostrar tabla editable
+    function renderTable() {
+      let html = "<table border='1' style='border-collapse:collapse;width:100%;text-align:center;'>";
+      csvData.forEach((row, i) => {
+        html += "<tr>";
+        row.forEach((cell, j) => {
+          html += `<td contenteditable="true" oninput="updateCell(${i},${j},this.innerText)">${cell}</td>`;
+        });
+        html += "</tr>";
+      });
+      html += "</table>";
+      tableDiv.innerHTML = html;
+      downloadBtn.style.display = "inline-block";
+    }
+
+    // ✏️ Actualizar celda al editar
+    function updateCell(row, col, value) {
+      csvData[row][col] = value;
+    }
+
+    // 💾 Descargar CSV actualizado
+    downloadBtn.addEventListener("click", () => {
+      let csvContent = csvData.map(e => e.join(",")).join("\n");
+      const blob = new Blob([csvContent], { type: "text/csv" });
+      const url = URL.createObjectURL(blob);
+
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "actualizado.csv";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    });
+  </script>
+
+  <script>
+    // ✅ Verificar si hay sesión activa
+    if (sessionStorage.getItem("logged") !== "true") {
+      window.location.href = "login.html";
+    }
+
+    function logout() {
+      sessionStorage.removeItem("logged"); // Cierra sesión
+      window.location.href = "login.html"; // Redirige al login
+    }
+  </script>
+
+  <footer class="footer" style="color:white;">
+    <p>Auspiciadores</p>
+    <img src="img/auspiciadores/metalMaf_light.png" alt="metalMaf" width="180px" style="margin-right:50px;">
+    <img src="img/auspiciadores/Gussta.png" alt="Gussta" width="100px">
+    <p>© 2025 Bárbaros FC - Todos los derechos reservados - Since 2021</p>
+  </footer>
+</body>
+</html>

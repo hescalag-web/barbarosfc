@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Bárbaros FC</title>
+  <link href="css/style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="img/favicon.png" type="image/png">
+</head>
+<body>
+  <header class="header">
+    <img src="img/logo.png" alt="Logo Club" class="logo">
+    <h1>BÁRBAROS FC</h1>Pasión, compromiso y gloria ⚽🔥<br>Más que un Club una Familia<h2 style="color:white;">LOGIN</h2>
+    <nav>
+      <a href="index.html">Volver</a><br><br><br>
+    </nav>
+  </header>
+
+  <div class="login-box">
+    <h2>Login Admin</h2>
+    <input type="text" id="username" placeholder="Usuario">
+    <input type="password" id="password" placeholder="Contraseña">
+    <button onclick="login()">Ingresar</button>
+  </div>
+
+  <script>
+    function login() {
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+
+      // 🔑 Usuario y clave fijos (ejemplo)
+      if (user === "admin" && pass === "1234") {
+        sessionStorage.setItem("logged", "true"); // Guardamos sesión
+        window.location.href = "admin.html"; // Redirige al panel
+      } else {
+        alert("❌ Usuario o contraseña incorrectos");
+      }
+    }
+  </script>
+
+  <footer class="footer" style="color:white;">
+    <p>Auspiciadores</p>
+    <img src="img/auspiciadores/metalMaf_light.png" alt="metalMaf" width="180px" style="margin-right:50px;">
+    <img src="img/auspiciadores/Gussta.png" alt="Gussta" width="100px">
+    <p>© 2025 Bárbaros FC - Todos los derechos reservados - Since 2021</p>
+  </footer>
+</body>
+</html>
