@@ -24,12 +24,20 @@ const plantel = [
     "estado": "activo"
   },
   {
+    "nombre": "Vicente Urrutia",
+    "descripcion": "Arquero",
+    "numero": "1",
+    "imagen": "img/jugadores/Vicente_Urrutia.png",
+    "categorias": ["arquero"],
+    "estado": "activo"
+  },
+  {
     "nombre": "Cristofer Urra",
     "descripcion": "Arquero",
     "numero": "1",
     "imagen": "img/jugadores/Cristofer_Urra.png",
     "categorias": ["arquero"],
-    "estado": "activo"
+    "estado": "inactivo"
   },
   {
     "nombre": "Gabriel Saldaña",
@@ -93,7 +101,7 @@ const plantel = [
     "numero": "7+1",
     "imagen": "img/jugadores/Ignacio_Cardenas.png",
     "categorias": ["medio", "defensa", "arquero"],
-    "estado": "inactivo"
+    "estado": "activo"
   },
   {
     "nombre": "Gonzalo Salazar",
@@ -117,7 +125,7 @@ const plantel = [
     "numero": "10",
     "imagen": "img/jugadores/Guillermo_Velozo.png",
     "categorias": ["delantero", "medio"],
-    "estado": "activo"
+    "estado": "inactivo"
   },
   {
     "nombre": "Sebastián Quezada",
@@ -125,7 +133,7 @@ const plantel = [
     "numero": "11",
     "imagen": "img/jugadores/Sebastian_Quezada.png",
     "categorias": ["delantero"],
-    "estado": "activo"
+    "estado": "inactivo"
   },
   {
     "nombre": "Gonzalo Rojas",
@@ -149,7 +157,7 @@ const plantel = [
     "numero": "16",
     "imagen": "img/jugadores/Jaime_Elorza.png",
     "categorias": ["medio"],
-    "estado": "activo"
+    "estado": "inactivo"
   },
   {
     "nombre": "Joel Lagos",
