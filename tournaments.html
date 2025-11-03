@@ -79,7 +79,7 @@
       });
       html += "</table>";
 
-      document.getElementById("current-scorer").innerHTML = html;
+      document.getElementById("current-scorer1").innerHTML = html;
     }
     // Ejecutar cuando cargue la página
     cargarCSV();
@@ -104,7 +104,7 @@
       });
       html += "</table>";
 
-      document.getElementById("fixture-current").innerHTML = html;
+      document.getElementById("fixture-current1").innerHTML = html;
     }
     // Ejecutar cuando cargue la página
     cargarCSV();
@@ -139,7 +139,7 @@
       const diferencia = golesFavor - golesContra;
       const efectividad = ((ganados * 3 + empatados) / (jugados * 3) * 100).toFixed(1);
       // Generar HTML
-      document.getElementById("statistics-fixture-current").innerHTML = `
+      document.getElementById("statistics-fixture-current1").innerHTML = `
         <div class="estadisticas-box">
           <h2>📊 Estadísticas</h2>
           <ul>
