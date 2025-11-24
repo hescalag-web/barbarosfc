@@ -29,7 +29,7 @@
   </section>
 
   <section class="hero">
-    <h3>Campeonato Entretiempo Senior +30 2025</h3>
+    <h3>Campeonato Entretiempo Senior +30 2025 (Finalizado)</h3>
   </section>
 
   <section class="hero">    
@@ -39,7 +39,7 @@
   </section>
 
   <section class="hero">
-    <h3>Campeonato Invierno Soccer Siete Senior +30 2025</h3>
+    <h3>Campeonato Invierno Soccer Siete Senior +30 2025 (Finalizado)</h3>
   </section>
 
   <section class="hero">
@@ -161,7 +161,7 @@
   <!-- CARGA CSV TABLA GOLEADORES-->
   <script>
     async function cargarCSV() {
-      const response = await fetch("docs/current_scorer_entreT-1.csv");
+      const response = await fetch("docs/anteriores/current_scorer_entreT-1.csv");
       const text = await response.text();
       const rows = text.split("\n").map(r => r.split(","));
 
@@ -186,7 +186,7 @@
   <!-- CARGA CSV TABLA ACTUAL FIXTURE-->
   <script>
     async function cargarCSV() {
-      const response = await fetch("docs/fixture_current_tournament_entreT-1.csv");
+      const response = await fetch("docs/anteriores/fixture_current_tournament_entreT-1.csv");
       const text = await response.text();
       const rows = text.split("\n").map(r => r.split(","));
 
@@ -211,7 +211,7 @@
   <!-- CARGA CSV TABLA ESTADISTICAS ACTUAL ESTADISTICAS-FIXTURE-->
   <script>
     async function cargarEstadisticas() {
-      const response = await fetch("docs/fixture_current_tournament_entreT-1.csv");
+      const response = await fetch("docs/anteriores/fixture_current_tournament_entreT-1.csv");
       const text = await response.text();
 
       // Procesar CSV
