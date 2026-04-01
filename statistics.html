@@ -103,7 +103,7 @@
 
       data.forEach(row => {
         jugados++;
-        const [fecha, rival, resultado, lugar] = row;
+        const [fecha, resultado, rival, lugar] = row;
         const [gf, gc] = resultado.split("-").map(Number);
 
         golesFavor += gf;
