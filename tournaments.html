@@ -146,7 +146,9 @@
         else empatados++;
       });
 
-      if (jugados = 0) jugados = 0
+      if (jugados = 0) jugados = 0;
+      if (empatados = 0) empatados = 0;
+
 
       const diferencia = golesFavor - golesContra;
       const efectividad = ((ganados * 3 + empatados) / (jugados * 3) * 100).toFixed(1);
