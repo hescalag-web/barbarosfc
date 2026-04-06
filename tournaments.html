@@ -134,21 +134,17 @@
       let golesFavor = 0, golesContra = 0;
 
       data.forEach(row => {
-        jugados++;
+        jugados++
         const [fecha, rival, resultado, lugar] = row;
         const [gf, gc] = resultado.split("-").map(Number);
 
         golesFavor += gf;
         golesContra += gc;
 
-        if (gf > gc) ganados++;
+        if (gf > gc) ganados++; 
         else if (gf < gc) perdidos++;
         else empatados++;
       });
-
-      if (jugados = 0) jugados = 0;
-      if (empatados = 0) empatados = 0;
-
 
       const diferencia = golesFavor - golesContra;
       const efectividad = ((ganados * 3 + empatados) / (jugados * 3) * 100).toFixed(1);
