@@ -104,6 +104,14 @@ const plantel = [
     "estado": "activo"
   },
   {
+    "nombre": "Daniel Ramos",
+    "descripcion": "Medio",
+    "numero": "8",
+    "imagen": "img/jugadores/Daniel_Ramos.png",
+    "categorias": ["medio"],
+    "estado": "activo"
+  },
+  {
     "nombre": "Gonzalo Salazar",
     "descripcion": "Medio",
     "numero": "8",
