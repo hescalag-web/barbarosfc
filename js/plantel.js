@@ -13,6 +13,14 @@ const plantel = [
     "numero": "DT",
     "imagen": "img/jugadores/Rodrigo_Vilches.png",
     "categorias": ["dt"],
+    "estado": "inactivo"
+  },
+  {
+    "nombre": "Manuel Parra",
+    "descripcion": "Director Técnico",
+    "numero": "DT",
+    "imagen": "img/jugadores/Manuel_Parra.png",
+    "categorias": ["dt"],
     "estado": "activo"
   },
   {
@@ -24,12 +32,20 @@ const plantel = [
     "estado": "activo"
   },
   {
+    "nombre": "Jesus Escobar",
+    "descripcion": "Arquero",
+    "numero": "1",
+    "imagen": "img/jugadores/Jesus_Escobar.png",
+    "categorias": ["arquero"],
+    "estado": "activo"
+  },
+  {
     "nombre": "Vicente Urrutia",
     "descripcion": "Arquero",
     "numero": "1",
     "imagen": "img/jugadores/Vicente_Urrutia.png",
     "categorias": ["arquero"],
-    "estado": "activo"
+    "estado": "inactivo"
   },
   {
     "nombre": "Cristofer Urra",
@@ -77,7 +93,7 @@ const plantel = [
     "numero": "5",
     "imagen": "img/jugadores/Marcelo_Loyola.png",
     "categorias": ["medio", "defensa"],
-    "estado": "activo"
+    "estado": "inactivo"
   },
   {
     "nombre": "Tomás Guerra",
@@ -92,7 +108,7 @@ const plantel = [
     "descripcion": "Medio",
     "numero": "7",
     "imagen": "img/jugadores/Sebastian_Ruminot.png",
-    "categorias": ["medio"],
+    "categorias": ["medio", "delantero"],
     "estado": "activo"
   },
   {
@@ -101,7 +117,7 @@ const plantel = [
     "numero": "7+1",
     "imagen": "img/jugadores/Ignacio_Cardenas.png",
     "categorias": ["medio", "defensa", "arquero"],
-    "estado": "activo"
+    "estado": "inactivo"
   },
   {
     "nombre": "Daniel Ramos",
@@ -157,7 +173,7 @@ const plantel = [
     "numero": "13",
     "imagen": "img/jugadores/Esteban_Sepulveda.png",
     "categorias": ["defensa", "medio"],
-    "estado": "activo"
+    "estado": "inactivo"
   },
   {
     "nombre": "Jaime Elorza",
@@ -173,7 +189,7 @@ const plantel = [
     "numero": "18",
     "imagen": "img/jugadores/Joel_Lagos.png",
     "categorias": ["defensa", "medio", "delantero"],
-    "estado": "activo"
+    "estado": "inactivo"
   },
   {
     "nombre": "Matías Ramos",
@@ -200,7 +216,7 @@ const plantel = [
     "estado": "activo"
   },
   {
-    "nombre": "Alejandro",
+    "nombre": "Alejandro Rubio",
     "descripcion": "Defensa",
     "numero": "26",
     "imagen": "img/jugadores/Alejandro_.png",
@@ -208,12 +224,20 @@ const plantel = [
     "estado": "inactivo"
   },
   {
+    "nombre": "Daniel Gallardo",
+    "descripcion": "Defensa",
+    "numero": "28",
+    "imagen": "img/jugadores/Daniel_Gallardo.png",
+    "categorias": ["defensa"],
+    "estado": "activo"
+  },
+  {
     "nombre": "Ricardo Torrejon",
     "descripcion": "Defensa",
     "numero": "29",
     "imagen": "img/jugadores/Ricardo_Torrejon.png",
     "categorias": ["medio", "defensa"],
-    "estado": "activo"
+    "estado": "inactivo"
   },
   {
     "nombre": "Gerson Roa",
@@ -237,7 +261,7 @@ const plantel = [
     "numero": "69",
     "imagen": "img/jugadores/Sebastian_Bravo.png",
     "categorias": ["medio", "defensa"],
-    "estado": "activo"
+    "estado": "inactivo"
   },
   {
     "nombre": "Byron Díaz",
