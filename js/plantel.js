@@ -16,14 +16,6 @@ const plantel = [
     "estado": "activo"
   },
   {
-    "nombre": "Juan Ignacio",
-    "descripcion": "Kinesiologo",
-    "numero": "KN",
-    "imagen": "img/jugadores/Juan_Ignacio.png",
-    "categorias": ["kn"],
-    "estado": "activo"
-  },
-  {
     "nombre": "Jesus Escobar",
     "descripcion": "Arquero",
     "numero": "1",
@@ -86,6 +78,14 @@ const plantel = [
     "imagen": "img/jugadores/Daniel_Gallardo.png",
     "categorias": ["defensa"],
     "estado": "activo"
+  },
+  {
+    "nombre": "Juan Ignacio",
+    "descripcion": "Kinesiologo",
+    "numero": "KN",
+    "imagen": "img/jugadores/Juan_Ignacio.png",
+    "categorias": ["kn"],
+    "estado": "inactivo"
   },
   {
     "nombre": "Rodrigo Vilches",
