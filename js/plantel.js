@@ -8,14 +8,6 @@ const plantel = [
     "estado": "inactivo"
   },
   {
-    "nombre": "Rodrigo Vilches",
-    "descripcion": "Director Técnico",
-    "numero": "DT",
-    "imagen": "img/jugadores/Rodrigo_Vilches.png",
-    "categorias": ["dt"],
-    "estado": "inactivo"
-  },
-  {
     "nombre": "Manuel Parra",
     "descripcion": "Director Técnico",
     "numero": "DT",
@@ -38,6 +30,70 @@ const plantel = [
     "imagen": "img/jugadores/Jesus_Escobar.png",
     "categorias": ["arquero"],
     "estado": "activo"
+  },
+  {
+    "nombre": "Diego Cancino",
+    "descripcion": "Medio",
+    "numero": "2",
+    "imagen": "img/jugadores/Diego_Cancino.png",
+    "categorias": ["medio", "delantero"],
+    "estado": "activo"
+  },
+  {
+    "nombre": "Daniel Moya",
+    "descripcion": "Defensa",
+    "numero": "3",
+    "imagen": "img/jugadores/Daniel_Moya.png",
+    "categorias": ["defensa"],
+    "estado": "activo"
+  },
+  {
+    "nombre": "Sebastián Ruminot",
+    "descripcion": "Medio",
+    "numero": "7",
+    "imagen": "img/jugadores/Sebastian_Ruminot.png",
+    "categorias": ["medio", "delantero"],
+    "estado": "activo"
+  },
+  {
+    "nombre": "Daniel Ramos",
+    "descripcion": "Medio",
+    "numero": "8",
+    "imagen": "img/jugadores/Daniel_Ramos.png",
+    "categorias": ["medio"],
+    "estado": "activo"
+  },
+  {
+    "nombre": "Hernán Escalante",
+    "descripcion": "Delantero",
+    "numero": "9",
+    "imagen": "img/jugadores/Hernan_Escalante.png",
+    "categorias": ["arquero", "delantero"],
+    "estado": "activo"
+  },
+  {
+    "nombre": "Patricio Ortega",
+    "descripcion": "Medio",
+    "numero": "24+7",
+    "imagen": "img/jugadores/Patricio_Ortega.png",
+    "categorias": ["medio", "delantero"],
+    "estado": "activo"
+  },
+  {
+    "nombre": "Daniel Gallardo",
+    "descripcion": "Defensa",
+    "numero": "28",
+    "imagen": "img/jugadores/Daniel_Gallardo.png",
+    "categorias": ["defensa"],
+    "estado": "activo"
+  },
+  {
+    "nombre": "Rodrigo Vilches",
+    "descripcion": "Director Técnico",
+    "numero": "DT",
+    "imagen": "img/jugadores/Rodrigo_Vilches.png",
+    "categorias": ["dt"],
+    "estado": "inactivo"
   },
   {
     "nombre": "Vicente Urrutia",
@@ -64,22 +120,6 @@ const plantel = [
     "estado": "inactivo"
   },
   {
-    "nombre": "Diego Cancino",
-    "descripcion": "Medio",
-    "numero": "2",
-    "imagen": "img/jugadores/Diego_Cancino.png",
-    "categorias": ["medio", "delantero"],
-    "estado": "activo"
-  },
-  {
-    "nombre": "Daniel Moya",
-    "descripcion": "Defensa",
-    "numero": "3",
-    "imagen": "img/jugadores/Daniel_Moya.png",
-    "categorias": ["defensa"],
-    "estado": "activo"
-  },
-  {
     "nombre": "Bernardo Figueroa",
     "descripcion": "Defensa",
     "numero": "4",
@@ -104,14 +144,6 @@ const plantel = [
     "estado": "inactivo"
   },
   {
-    "nombre": "Sebastián Ruminot",
-    "descripcion": "Medio",
-    "numero": "7",
-    "imagen": "img/jugadores/Sebastian_Ruminot.png",
-    "categorias": ["medio", "delantero"],
-    "estado": "activo"
-  },
-  {
     "nombre": "Ignacio Cardenas",
     "descripcion": "Defensa",
     "numero": "7+1",
@@ -120,28 +152,12 @@ const plantel = [
     "estado": "inactivo"
   },
   {
-    "nombre": "Daniel Ramos",
-    "descripcion": "Medio",
-    "numero": "8",
-    "imagen": "img/jugadores/Daniel_Ramos.png",
-    "categorias": ["medio"],
-    "estado": "activo"
-  },
-  {
     "nombre": "Gonzalo Salazar",
     "descripcion": "Medio",
     "numero": "8",
     "imagen": "img/jugadores/Gonzalo_Salazar.png",
     "categorias": ["medio"],
     "estado": "inactivo"
-  },
-  {
-    "nombre": "Hernán Escalante",
-    "descripcion": "Delantero",
-    "numero": "9",
-    "imagen": "img/jugadores/Hernan_Escalante.png",
-    "categorias": ["arquero", "delantero"],
-    "estado": "activo"
   },
   {
     "nombre": "Guillermo Velozo",
@@ -208,28 +224,12 @@ const plantel = [
     "estado": "inactivo"
   },
   {
-    "nombre": "Patricio Ortega",
-    "descripcion": "Medio",
-    "numero": "24+7",
-    "imagen": "img/jugadores/Patricio_Ortega.png",
-    "categorias": ["medio", "delantero"],
-    "estado": "activo"
-  },
-  {
     "nombre": "Alejandro Rubio",
     "descripcion": "Defensa",
     "numero": "26",
     "imagen": "img/jugadores/Alejandro_.png",
     "categorias": ["defensa"],
     "estado": "inactivo"
-  },
-  {
-    "nombre": "Daniel Gallardo",
-    "descripcion": "Defensa",
-    "numero": "28",
-    "imagen": "img/jugadores/Daniel_Gallardo.png",
-    "categorias": ["defensa"],
-    "estado": "activo"
   },
   {
     "nombre": "Ricardo Torrejon",
