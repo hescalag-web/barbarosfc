@@ -43,19 +43,12 @@
   </section>
 
   <section class="hero">    
-    <div id="fixture-current" style="display:flex; justify-content:center; align-items:center;"></div><br>
-    <div id="current-scorer" style="display:flex; justify-content:center; align-items:center;"></div><br>
-    <div id="statistics-fixture-current"></div>
+    <div id="fixture_entreT-1" style="display:flex; justify-content:center; align-items:center;"></div><br>
+    <div id="scorer_entreT-1" style="display:flex; justify-content:center; align-items:center;"></div><br>
+    <div id="statistics_entreT-1"></div>
   </section>
 
-  <section class="hero">
-    <h3>Campeonato Invierno Soccer Siete Senior +30 2025 (Finalizado)</h3>
-  </section>
-
-  <section class="hero">
-    <div id="fixture-before" style="display:flex; justify-content:center; align-items:center;"></div><br>
-    <div id="statistics-fixture-before"></div>
-  </section>
+  <iframe src="docs/anteriores/2024/2024.html"></iframe>
 
   <footer class="footer" style="color:white;">
     <div class="social-icons">
@@ -266,6 +259,7 @@
     cargarEstadisticas();
   </script>
 
+<!-- fixture_current_tournament_entreT-1-->
   <!-- CARGA CSV TABLA GOLEADORES-->
   <script>
     async function cargarCSV() {
@@ -285,7 +279,7 @@
       });
       html += "</table>";
 
-      document.getElementById("current-scorer").innerHTML = html;
+      document.getElementById("scorer_entreT-1").innerHTML = html;
     }
     // Ejecutar cuando cargue la página
     cargarCSV();
@@ -310,7 +304,7 @@
       });
       html += "</table>";
 
-      document.getElementById("fixture-current").innerHTML = html;
+      document.getElementById("fixture_entreT-1").innerHTML = html;
     }
     // Ejecutar cuando cargue la página
     cargarCSV();
@@ -345,7 +339,7 @@
       const diferencia = golesFavor - golesContra;
       const efectividad = ((ganados * 3 + empatados) / (jugados * 3) * 100).toFixed(1);
       // Generar HTML
-      document.getElementById("statistics-fixture-current").innerHTML = `
+      document.getElementById("estadisticas_entreT-1").innerHTML = `
         <div class="estadisticas-box">
           <h2>📊 Estadísticas</h2>
           <ul>
@@ -360,72 +354,6 @@
           </ul>
         </div>
       `;
-    }
-    cargarEstadisticas();
-  </script>
-
-<!-- CARGA CSV TABLA ANTERIOR PARTIDOS-->
-  <script>
-    async function cargarCSV() {
-      const response = await fetch("docs/anteriores/fixture_tournament_soccerS24.csv");
-      const text = await response.text()
-      const rows = text.split("\n").map(r => r.split(","))
-      let html = "<table class='tabla'>";
-      rows.forEach((row, i) => {
-        html += "<tr>";
-          row.forEach(cell => {
-            html += i === 0 
-            ? `<th>${cell}</th>`
-            : `<td>${cell}</td>`;
-          });
-          html += "</tr>";
-        });
-      html += "</table>"
-      document.getElementById("fixture-before").innerHTML = html;
-    }
-    // Ejecutar cuando cargue la página
-    cargarCSV();
-  </script>
-
-  <!-- CARGA CSV TABLA ESTADISTICAS ANTERIOR ESTADISTICAS-PARTIDOS-->
-  <script>
-    async function cargarEstadisticas() {
-      const response = await fetch("docs/anteriores/fixture_tournament_soccerS24.csv");
-      const text = await response.text()
-      // Procesar CSV
-      const rows = text.trim().split("\n").map(r => r.split(","));
-      const data = rows.slice(1); // sin cabecera
-                
-      let jugados = 0, ganados = 0, empatados = 0, perdidos = 0;
-      let golesFavor = 0, golesContra = 0
-      data.forEach(row => {
-        jugados++;
-        const [fecha, resultado, rival, lugar] = row;
-        const [gf, gc] = resultado.split("-").map(Number)
-        golesFavor += gf;
-        golesContra += gc
-        if (gf > gc) ganados++;
-        else if (gf < gc) perdidos++;
-        else empatados++;
-      })
-        const diferencia = golesFavor - golesContra;
-        const efectividad = ((ganados * 3 + empatados) / (jugados * 3) * 100).toFixed(1)
-        // Generar HTML
-        document.getElementById("statistics-fixture-before").innerHTML = `
-          <div class="estadisticas-box">
-            <h2>📊 Estadísticas</h2>
-            <ul>
-              <li><strong>Partidos jugados:</strong> ${jugados}</li>
-              <li><strong>Ganados:</strong> ${ganados}</li>
-              <li><strong>Empatados:</strong> ${empatados}</li>
-              <li><strong>Perdidos:</strong> ${perdidos}</li>
-              <li><strong>Goles a favor:</strong> ${golesFavor}</li>
-              <li><strong>Goles en contra:</strong> ${golesContra}</li>
-              <li><strong>Diferencia de goles:</strong> ${diferencia}</li>
-              <li><strong>Efectividad:</strong> ${efectividad}%</li>
-            </ul>
-          </div>
-        `;
     }
     cargarEstadisticas();
   </script>
