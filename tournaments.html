@@ -458,7 +458,7 @@
 
   <script>
     async function cargarCSV() {
-      const response = await fetch("docs/anteriores/2025/scorer_Entretiempo_Apertura2025.csv");
+      const response = await fetch("docs/anteriores/2025/scorer_EntreTiempo_Apertura2025.csv");
       const text = await response.text();
       const rows = text.split("\n").map(r => r.split(","));
 
@@ -483,7 +483,7 @@
   <!-- CARGA CSV TABLA ACTUAL FIXTURE-->
   <script>
     async function cargarCSV() {
-      const response = await fetch("docs/anteriores/2025/fixture_Entretiempo_Apertura2025.csv");
+      const response = await fetch("docs/anteriores/2025/fixture_EntreTiempo_Apertura2025.csv");
       const text = await response.text();
       const rows = text.split("\n").map(r => r.split(","));
 
@@ -508,7 +508,7 @@
   <!-- CARGA CSV TABLA ESTADISTICAS ACTUAL ESTADISTICAS-FIXTURE-->
   <script>
     async function cargarEstadisticas() {
-      const response = await fetch("docs/anteriores/2025/fixture_Entretiempo_Apertura2025.csv");
+      const response = await fetch("docs/anteriores/2025/fixture_EntreTiempo_Apertura2025.csv");
       const text = await response.text();
 
       // Procesar CSV
