@@ -13,7 +13,7 @@ const plantel = [
     "numero": "DT",
     "imagen": "img/jugadores/Manuel_Parra.png",
     "categorias": ["dt"],
-    "estado": "activo"
+    "estado": "inactivo"
   },
   {
     "nombre": "Jesus Escobar",
@@ -101,7 +101,7 @@ const plantel = [
     "numero": "1",
     "imagen": "img/jugadores/Vicente_Urrutia.png",
     "categorias": ["arquero"],
-    "estado": "inactivo"
+    "estado": "activo"
   },
   {
     "nombre": "Cristofer Urra",
@@ -109,7 +109,7 @@ const plantel = [
     "numero": "1",
     "imagen": "img/jugadores/Cristofer_Urra.png",
     "categorias": ["arquero"],
-    "estado": "inactivo"
+    "estado": "activo"
   },
   {
     "nombre": "Gabriel Saldaña",
@@ -189,7 +189,7 @@ const plantel = [
     "numero": "13",
     "imagen": "img/jugadores/Esteban_Sepulveda.png",
     "categorias": ["defensa", "medio"],
-    "estado": "inactivo"
+    "estado": "activo"
   },
   {
     "nombre": "Jaime Elorza",
