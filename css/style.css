@@ -284,6 +284,13 @@ button {
   transition: 0.3s;
 }
 
+.social-icons a svg {
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+  fill: currentColor;
+}
+
 .social-icons a:hover {
   color: #fff; /* blanco al pasar el mouse */
 }
