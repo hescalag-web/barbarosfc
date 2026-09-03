@@ -19,6 +19,16 @@
   </header>
 
   <section class="hero">
+    <h3>Campeonato Clausura Entretiempo Senior +40 2026</h3>
+  </section>
+
+  <section class="hero">
+    <div id="fixture_+40Clausura2026" style="display:flex; justify-content:center; align-items:center;"></div><br>
+    <div id="scorer_+40Clausura2026" style="display:flex; justify-content:center; align-items:center;"></div><br>
+    <div id="estadisticas_+40Clausura2026"></div>
+  </section>
+
+  <section class="hero">
     <h3>Campeonato Clausura Entretiempo Senior +30 2026</h3>
   </section>
 
@@ -100,6 +110,11 @@
     //   2) agrega una línea aquí abajo con esos mismos ids y las rutas a los CSV.
     // Si un campeonato todavía no tiene archivo de goleadores, deja scorerCsv en null.
     const CAMPEONATOS = [
+      {
+        fixtureCsv: "docs/anteriores/2026/fixture_EntreTiempo_+40Clausura2026.csv",
+        scorerCsv: "docs/anteriores/2026/scorer_EntreTiempo_+40Clausura2026.csv",
+        fixtureId: "fixture_+40Clausura2026", scorerId: "scorer_+40Clausura2026", statsId: "estadisticas_+40Clausura2026",
+      },
       {
         fixtureCsv: "docs/anteriores/2026/fixture_EntreTiempo_Clausura2026.csv",
         scorerCsv: "docs/anteriores/2026/scorer_EntreTiempo_Clausura2026.csv",
