@@ -60,28 +60,9 @@
     <p>© 2025 Bárbaros FC - Todos los derechos reservados - Since 2021</p>
   </footer>
 
+  <script src="js/stats.js"></script>
   <script>
-    async function cargarCSV() {
-      const response = await fetch("docs/next_games.csv");
-      const text = await response.text();
-      const rows = text.split("\n").map(r => r.split(","));
-
-      let html = "<table class='tabla'>";
-      rows.forEach((row, i) => {
-        html += "<tr>";
-          row.forEach(cell => {
-            html += i === 0 
-            ? `<th>${cell}</th>`
-            : `<td>${cell}</td>`;
-          });
-          html += "</tr>";
-      });
-      html += "</table>";
-
-      document.getElementById("table-next").innerHTML = html;
-    }
-    // Ejecutar cuando cargue la página
-    cargarCSV();
+    renderCsvTable("docs/next_games.csv", "table-next");
   </script>
 </body>
 </html>

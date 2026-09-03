@@ -22,623 +22,65 @@
     <h3>Campeonato Clausura Entretiempo Senior +30 2026</h3>
   </section>
 
-  <section class="hero">    
+  <section class="hero">
     <div id="fixture_Clausura2026" style="display:flex; justify-content:center; align-items:center;"></div><br>
     <div id="scorer_Clausura2026" style="display:flex; justify-content:center; align-items:center;"></div><br>
     <div id="estadisticas_Clausura2026"></div>
   </section>
-  <!-- CARGA CSV TABLA GOLEADORES-->
-  <script>
-    async function cargarCSV() {
-      const response = await fetch("docs/anteriores/2026/scorer_EntreTiempo_Clausura2026.csv");
-      const text = await response.text();
-      const rows = text.split("\n").map(r => r.split(","));
-
-      let html = "<table class='tabla'>";
-      rows.forEach((row, i) => {
-        html += "<tr>";
-          row.forEach(cell => {
-            html += i === 0 
-            ? `<th>${cell}</th>`
-            : `<td>${cell}</td>`;
-          });
-          html += "</tr>";
-      });
-      html += "</table>";
-
-      document.getElementById("scorer_Clausura2026").innerHTML = html;
-    }
-    // Ejecutar cuando cargue la página
-    cargarCSV();
-  </script>
-
-  <!-- CARGA CSV TABLA ACTUAL FIXTURE-->
-  <script>
-    async function cargarCSV() {
-      const response = await fetch("docs/anteriores/2026/fixture_EntreTiempo_Clausura2026.csv");
-      const text = await response.text();
-      const rows = text.split("\n").map(r => r.split(","));
-
-      let html = "<table class='tabla'>";
-      rows.forEach((row, i) => {
-        html += "<tr>";
-          row.forEach(cell => {
-            html += i === 0 
-            ? `<th>${cell}</th>`
-            : `<td>${cell}</td>`;
-          });
-          html += "</tr>";
-      });
-      html += "</table>";
-
-      document.getElementById("fixture_Clausura2026").innerHTML = html;
-    }
-    // Ejecutar cuando cargue la página
-    cargarCSV();
-  </script>
-
-  <!-- CARGA CSV TABLA ESTADISTICAS ACTUAL ESTADISTICAS-FIXTURE-->
-  <script>
-    async function cargarEstadisticas() {
-      const response = await fetch("docs/anteriores/2026/fixture_EntreTiempo_Clausura2026.csv");
-      const text = await response.text();
-
-      // Procesar CSV
-      const rows = text.trim().split("\n").map(r => r.split(","));
-      const data = rows.slice(1); // sin cabecera
-
-      let jugados = 0, ganados = 0, empatados = 0, perdidos = 0;
-      let golesFavor = 0, golesContra = 0;
-
-      data.forEach(row => {
-        jugados++
-        const [fecha, resultado, rival, lugar] = row;
-        const [gf, gc] = resultado.split("-").map(Number);
-
-        golesFavor += gf;
-        golesContra += gc;
-
-        if (gf > gc) ganados++; 
-        else if (gf < gc) perdidos++;
-        else empatados++;
-      });
-
-      const diferencia = golesFavor - golesContra;
-      const efectividad = ((ganados * 3 + empatados) / (jugados * 3) * 100).toFixed(1);
-      // Generar HTML
-      document.getElementById("estadisticas_Clausura2026").innerHTML = `
-        <div class="estadisticas-box">
-          <h2>📊 Estadísticas</h2>
-          <ul>
-            <li><strong>Partidos jugados:</strong> ${jugados}</li>
-            <li><strong>Ganados:</strong> ${ganados}</li>
-            <li><strong>Empatados:</strong> ${empatados}</li>
-            <li><strong>Perdidos:</strong> ${perdidos}</li>
-            <li><strong>Goles a favor:</strong> ${golesFavor}</li>
-            <li><strong>Goles en contra:</strong> ${golesContra}</li>
-            <li><strong>Diferencia de goles:</strong> ${diferencia}</li>
-            <li><strong>Efectividad:</strong> ${efectividad}%</li>
-          </ul>
-        </div>
-      `;
-    }
-    cargarEstadisticas();
-  </script>
 
   <section class="hero">
     <h3>Cuadrangular Entretiempo Senior +30 2026</h3>
   </section>
 
-  <section class="hero">    
+  <section class="hero">
     <div id="fixture_Cuadrangular2026" style="display:flex; justify-content:center; align-items:center;"></div><br>
     <div id="scorer_Cuadrangular2026" style="display:flex; justify-content:center; align-items:center;"></div><br>
     <div id="estadisticas_Cuadrangular2026"></div>
   </section>
-  <!-- CARGA CSV TABLA GOLEADORES-->
-  <script>
-    async function cargarCSV() {
-      const response = await fetch("docs/anteriores/2026/scorer_EntreTiempo_Cuadrangular2026.csv");
-      const text = await response.text();
-      const rows = text.split("\n").map(r => r.split(","));
-
-      let html = "<table class='tabla'>";
-      rows.forEach((row, i) => {
-        html += "<tr>";
-          row.forEach(cell => {
-            html += i === 0 
-            ? `<th>${cell}</th>`
-            : `<td>${cell}</td>`;
-          });
-          html += "</tr>";
-      });
-      html += "</table>";
-
-      document.getElementById("scorer_Cuadrangular2026").innerHTML = html;
-    }
-    // Ejecutar cuando cargue la página
-    cargarCSV();
-  </script>
-
-  <!-- CARGA CSV TABLA ACTUAL FIXTURE-->
-  <script>
-    async function cargarCSV() {
-      const response = await fetch("docs/anteriores/2026/fixture_EntreTiempo_Cuadrangular2026.csv");
-      const text = await response.text();
-      const rows = text.split("\n").map(r => r.split(","));
-
-      let html = "<table class='tabla'>";
-      rows.forEach((row, i) => {
-        html += "<tr>";
-          row.forEach(cell => {
-            html += i === 0 
-            ? `<th>${cell}</th>`
-            : `<td>${cell}</td>`;
-          });
-          html += "</tr>";
-      });
-      html += "</table>";
-
-      document.getElementById("fixture_Cuadrangular2026").innerHTML = html;
-    }
-    // Ejecutar cuando cargue la página
-    cargarCSV();
-  </script>
-
-  <!-- CARGA CSV TABLA ESTADISTICAS ACTUAL ESTADISTICAS-FIXTURE-->
-  <script>
-    async function cargarEstadisticas() {
-      const response = await fetch("docs/anteriores/2026/fixture_EntreTiempo_Cuadrangular2026.csv");
-      const text = await response.text();
-
-      // Procesar CSV
-      const rows = text.trim().split("\n").map(r => r.split(","));
-      const data = rows.slice(1); // sin cabecera
-
-      let jugados = 0, ganados = 0, empatados = 0, perdidos = 0;
-      let golesFavor = 0, golesContra = 0;
-
-      data.forEach(row => {
-        jugados++
-        const [fecha, resultado, rival, lugar] = row;
-        const [gf, gc] = resultado.split("-").map(Number);
-
-        golesFavor += gf;
-        golesContra += gc;
-
-        if (gf > gc) ganados++; 
-        else if (gf < gc) perdidos++;
-        else empatados++;
-      });
-
-      const diferencia = golesFavor - golesContra;
-      const efectividad = ((ganados * 3 + empatados) / (jugados * 3) * 100).toFixed(1);
-      // Generar HTML
-      document.getElementById("estadisticas_Cuadrangular2026").innerHTML = `
-        <div class="estadisticas-box">
-          <h2>📊 Estadísticas</h2>
-          <ul>
-            <li><strong>Partidos jugados:</strong> ${jugados}</li>
-            <li><strong>Ganados:</strong> ${ganados}</li>
-            <li><strong>Empatados:</strong> ${empatados}</li>
-            <li><strong>Perdidos:</strong> ${perdidos}</li>
-            <li><strong>Goles a favor:</strong> ${golesFavor}</li>
-            <li><strong>Goles en contra:</strong> ${golesContra}</li>
-            <li><strong>Diferencia de goles:</strong> ${diferencia}</li>
-            <li><strong>Efectividad:</strong> ${efectividad}%</li>
-          </ul>
-        </div>
-      `;
-    }
-    cargarEstadisticas();
-  </script>
 
   <section class="hero">
     <h3>Campeonato Apertura Entretiempo Senior +30 2026 (Finalizado)</h3>
   </section>
 
-  <section class="hero">    
+  <section class="hero">
     <div id="fixture_Apertura2026" style="display:flex; justify-content:center; align-items:center;"></div><br>
     <div id="scorer_Apertura2026" style="display:flex; justify-content:center; align-items:center;"></div><br>
     <div id="estadisticas_Apertura2026"></div>
   </section>
-  <!-- CARGA CSV TABLA GOLEADORES-->
-  <script>
-    async function cargarCSV() {
-      const response = await fetch("docs/anteriores/2026/scorer_EntreTiempo_Apertura2026.csv");
-      const text = await response.text();
-      const rows = text.split("\n").map(r => r.split(","));
-
-      let html = "<table class='tabla'>";
-      rows.forEach((row, i) => {
-        html += "<tr>";
-          row.forEach(cell => {
-            html += i === 0 
-            ? `<th>${cell}</th>`
-            : `<td>${cell}</td>`;
-          });
-          html += "</tr>";
-      });
-      html += "</table>";
-
-      document.getElementById("scorer_Apertura2026").innerHTML = html;
-    }
-    // Ejecutar cuando cargue la página
-    cargarCSV();
-  </script>
-
-  <!-- CARGA CSV TABLA ACTUAL FIXTURE-->
-  <script>
-    async function cargarCSV() {
-      const response = await fetch("docs/anteriores/2026/fixture_EntreTiempo_Apertura2026.csv");
-      const text = await response.text();
-      const rows = text.split("\n").map(r => r.split(","));
-
-      let html = "<table class='tabla'>";
-      rows.forEach((row, i) => {
-        html += "<tr>";
-          row.forEach(cell => {
-            html += i === 0 
-            ? `<th>${cell}</th>`
-            : `<td>${cell}</td>`;
-          });
-          html += "</tr>";
-      });
-      html += "</table>";
-
-      document.getElementById("fixture_Apertura2026").innerHTML = html;
-    }
-    // Ejecutar cuando cargue la página
-    cargarCSV();
-  </script>
-
-  <!-- CARGA CSV TABLA ESTADISTICAS ACTUAL ESTADISTICAS-FIXTURE-->
-  <script>
-    async function cargarEstadisticas() {
-      const response = await fetch("docs/anteriores/2026/fixture_EntreTiempo_Apertura2026.csv");
-      const text = await response.text();
-
-      // Procesar CSV
-      const rows = text.trim().split("\n").map(r => r.split(","));
-      const data = rows.slice(1); // sin cabecera
-
-      let jugados = 0, ganados = 0, empatados = 0, perdidos = 0;
-      let golesFavor = 0, golesContra = 0;
-
-      data.forEach(row => {
-        jugados++
-        const [fecha, resultado, rival, lugar] = row;
-        const [gf, gc] = resultado.split("-").map(Number);
-
-        golesFavor += gf;
-        golesContra += gc;
-
-        if (gf > gc) ganados++; 
-        else if (gf < gc) perdidos++;
-        else empatados++;
-      });
-
-      const diferencia = golesFavor - golesContra;
-      const efectividad = ((ganados * 3 + empatados) / (jugados * 3) * 100).toFixed(1);
-      // Generar HTML
-      document.getElementById("estadisticas_Apertura2026").innerHTML = `
-        <div class="estadisticas-box">
-          <h2>📊 Estadísticas</h2>
-          <ul>
-            <li><strong>Partidos jugados:</strong> ${jugados}</li>
-            <li><strong>Ganados:</strong> ${ganados}</li>
-            <li><strong>Empatados:</strong> ${empatados}</li>
-            <li><strong>Perdidos:</strong> ${perdidos}</li>
-            <li><strong>Goles a favor:</strong> ${golesFavor}</li>
-            <li><strong>Goles en contra:</strong> ${golesContra}</li>
-            <li><strong>Diferencia de goles:</strong> ${diferencia}</li>
-            <li><strong>Efectividad:</strong> ${efectividad}%</li>
-          </ul>
-        </div>
-      `;
-    }
-    cargarEstadisticas();
-  </script>
 
   <section class="hero">
     <h3>Campeonato Clausura SoccerSiete Senior +30 2025 (Finalizado)</h3>
   </section>
 
-  <section class="hero">    
+  <section class="hero">
     <div id="fixture_Clausura2025" style="display:flex; justify-content:center; align-items:center;"></div><br>
     <div id="scorer_Clausura2025" style="display:flex; justify-content:center; align-items:center;"></div><br>
     <div id="estadisticas_Clausura2025"></div>
   </section>
 
-  <script>
-    async function cargarCSV() {
-      const response = await fetch("docs/anteriores/2025/scorer_SoccerS_Clausura2025.csv");
-      const text = await response.text();
-      const rows = text.split("\n").map(r => r.split(","));
-
-      let html = "<table class='tabla'>";
-      rows.forEach((row, i) => {
-        html += "<tr>";
-          row.forEach(cell => {
-            html += i === 0 
-            ? `<th>${cell}</th>`
-            : `<td>${cell}</td>`;
-          });
-          html += "</tr>";
-      });
-      html += "</table>";
-
-      document.getElementById("scorer_Clausura2025").innerHTML = html;
-    }
-    // Ejecutar cuando cargue la página
-    cargarCSV();
-  </script>
-
-  <!-- CARGA CSV TABLA ACTUAL FIXTURE-->
-  <script>
-    async function cargarCSV() {
-      const response = await fetch("docs/anteriores/2025/fixture_SoccerS_Clausura2025.csv");
-      const text = await response.text();
-      const rows = text.split("\n").map(r => r.split(","));
-
-      let html = "<table class='tabla'>";
-      rows.forEach((row, i) => {
-        html += "<tr>";
-          row.forEach(cell => {
-            html += i === 0 
-            ? `<th>${cell}</th>`
-            : `<td>${cell}</td>`;
-          });
-          html += "</tr>";
-      });
-      html += "</table>";
-
-      document.getElementById("fixture_Clausura2025").innerHTML = html;
-    }
-    // Ejecutar cuando cargue la página
-    cargarCSV();
-  </script>
-
-  <!-- CARGA CSV TABLA ESTADISTICAS ACTUAL ESTADISTICAS-FIXTURE-->
-  <script>
-    async function cargarEstadisticas() {
-      const response = await fetch("docs/anteriores/2025/fixture_SoccerS_Clausura2025.csv");
-      const text = await response.text();
-
-      // Procesar CSV
-      const rows = text.trim().split("\n").map(r => r.split(","));
-      const data = rows.slice(1); // sin cabecera
-
-      let jugados = 0, ganados = 0, empatados = 0, perdidos = 0;
-      let golesFavor = 0, golesContra = 0;
-
-      data.forEach(row => {
-        jugados++;
-        const [fecha, resultado, rival, lugar] = row;
-        const [gf, gc] = resultado.split("-").map(Number);
-
-        golesFavor += gf;
-        golesContra += gc;
-
-        if (gf > gc) ganados++;
-        else if (gf < gc) perdidos++;
-        else empatados++;
-      });
-
-      const diferencia = golesFavor - golesContra;
-      const efectividad = ((ganados * 3 + empatados) / (jugados * 3) * 100).toFixed(1);
-      // Generar HTML
-      document.getElementById("estadisticas_Clausura2025").innerHTML = `
-        <div class="estadisticas-box">
-          <h2>📊 Estadísticas</h2>
-          <ul>
-            <li><strong>Partidos jugados:</strong> ${jugados}</li>
-            <li><strong>Ganados:</strong> ${ganados}</li>
-            <li><strong>Empatados:</strong> ${empatados}</li>
-            <li><strong>Perdidos:</strong> ${perdidos}</li>
-            <li><strong>Goles a favor:</strong> ${golesFavor}</li>
-            <li><strong>Goles en contra:</strong> ${golesContra}</li>
-            <li><strong>Diferencia de goles:</strong> ${diferencia}</li>
-            <li><strong>Efectividad:</strong> ${efectividad}%</li>
-          </ul>
-        </div>
-      `;
-    }
-    cargarEstadisticas();
-  </script>
-
   <section class="hero">
     <h3>Campeonato Entretiempo Senior +30 2025 (Finalizado)</h3>
   </section>
 
-  <section class="hero">    
+  <section class="hero">
     <div id="fixture_Apertura2025" style="display:flex; justify-content:center; align-items:center;"></div><br>
     <div id="scorer_Apertura2025" style="display:flex; justify-content:center; align-items:center;"></div><br>
     <div id="estadisticas_Apertura2025"></div>
   </section>
 
-  <script>
-    async function cargarCSV() {
-      const response = await fetch("docs/anteriores/2025/scorer_EntreTiempo_Apertura2025.csv");
-      const text = await response.text();
-      const rows = text.split("\n").map(r => r.split(","));
-
-      let html = "<table class='tabla'>";
-      rows.forEach((row, i) => {
-        html += "<tr>";
-          row.forEach(cell => {
-            html += i === 0 
-            ? `<th>${cell}</th>`
-            : `<td>${cell}</td>`;
-          });
-          html += "</tr>";
-      });
-      html += "</table>";
-
-      document.getElementById("scorer_Apertura2025").innerHTML = html;
-    }
-    // Ejecutar cuando cargue la página
-    cargarCSV();
-  </script>
-
-  <!-- CARGA CSV TABLA ACTUAL FIXTURE-->
-  <script>
-    async function cargarCSV() {
-      const response = await fetch("docs/anteriores/2025/fixture_EntreTiempo_Apertura2025.csv");
-      const text = await response.text();
-      const rows = text.split("\n").map(r => r.split(","));
-
-      let html = "<table class='tabla'>";
-      rows.forEach((row, i) => {
-        html += "<tr>";
-          row.forEach(cell => {
-            html += i === 0 
-            ? `<th>${cell}</th>`
-            : `<td>${cell}</td>`;
-          });
-          html += "</tr>";
-      });
-      html += "</table>";
-
-      document.getElementById("fixture_Apertura2025").innerHTML = html;
-    }
-    // Ejecutar cuando cargue la página
-    cargarCSV();
-  </script>
-
-  <!-- CARGA CSV TABLA ESTADISTICAS ACTUAL ESTADISTICAS-FIXTURE-->
-  <script>
-    async function cargarEstadisticas() {
-      const response = await fetch("docs/anteriores/2025/fixture_EntreTiempo_Apertura2025.csv");
-      const text = await response.text();
-
-      // Procesar CSV
-      const rows = text.trim().split("\n").map(r => r.split(","));
-      const data = rows.slice(1); // sin cabecera
-
-      let jugados = 0, ganados = 0, empatados = 0, perdidos = 0;
-      let golesFavor = 0, golesContra = 0;
-
-      data.forEach(row => {
-        jugados++;
-        const [fecha, resultado, rival, lugar] = row;
-        const [gf, gc] = resultado.split("-").map(Number);
-
-        golesFavor += gf;
-        golesContra += gc;
-
-        if (gf > gc) ganados++;
-        else if (gf < gc) perdidos++;
-        else empatados++;
-      });
-
-      const diferencia = golesFavor - golesContra;
-      const efectividad = ((ganados * 3 + empatados) / (jugados * 3) * 100).toFixed(1);
-      // Generar HTML
-      document.getElementById("estadisticas_Apertura2025").innerHTML = `
-        <div class="estadisticas-box">
-          <h2>📊 Estadísticas</h2>
-          <ul>
-            <li><strong>Partidos jugados:</strong> ${jugados}</li>
-            <li><strong>Ganados:</strong> ${ganados}</li>
-            <li><strong>Empatados:</strong> ${empatados}</li>
-            <li><strong>Perdidos:</strong> ${perdidos}</li>
-            <li><strong>Goles a favor:</strong> ${golesFavor}</li>
-            <li><strong>Goles en contra:</strong> ${golesContra}</li>
-            <li><strong>Diferencia de goles:</strong> ${diferencia}</li>
-            <li><strong>Efectividad:</strong> ${efectividad}%</li>
-          </ul>
-        </div>
-      `;
-    }
-    cargarEstadisticas();
-  </script>
-
   <section class="hero">
     <h3>Campeonato Clausura SoccerSiete Senior +30 2024 (Finalizado)</h3>
   </section>
 
-  <section class="hero">    
+  <section class="hero">
     <div id="fixture_Clausura2024" style="display:flex; justify-content:center; align-items:center;"></div><br>
     <div id="scorer_Clausura2024" style="display:flex; justify-content:center; align-items:center;"></div><br>
     <div id="estadisticas_Clausura2024"></div>
   </section>
 
-  <!-- CARGA CSV TABLA ACTUAL FIXTURE-->
-  <script>
-    async function cargarCSV() {
-      const response = await fetch("docs/anteriores/2024/fixture_SoccerS_Clausura2024.csv");
-      const text = await response.text();
-      const rows = text.split("\n").map(r => r.split(","));
-
-      let html = "<table class='tabla'>";
-      rows.forEach((row, i) => {
-        html += "<tr>";
-          row.forEach(cell => {
-            html += i === 0 
-            ? `<th>${cell}</th>`
-            : `<td>${cell}</td>`;
-          });
-          html += "</tr>";
-      });
-      html += "</table>";
-
-      document.getElementById("fixture_Clausura2024").innerHTML = html;
-    }
-    // Ejecutar cuando cargue la página
-    cargarCSV();
-  </script>
-
-  <!-- CARGA CSV TABLA ESTADISTICAS ACTUAL ESTADISTICAS-FIXTURE-->
-  <script>
-    async function cargarEstadisticas() {
-      const response = await fetch("docs/anteriores/2024/fixture_SoccerS_Clausura2024.csv");
-      const text = await response.text();
-
-      // Procesar CSV
-      const rows = text.trim().split("\n").map(r => r.split(","));
-      const data = rows.slice(1); // sin cabecera
-
-      let jugados = 0, ganados = 0, empatados = 0, perdidos = 0;
-      let golesFavor = 0, golesContra = 0;
-
-      data.forEach(row => {
-        jugados++;
-        const [fecha, resultado, rival, lugar] = row;
-        const [gf, gc] = resultado.split("-").map(Number);
-
-        golesFavor += gf;
-        golesContra += gc;
-
-        if (gf > gc) ganados++;
-        else if (gf < gc) perdidos++;
-        else empatados++;
-      });
-
-      const diferencia = golesFavor - golesContra;
-      const efectividad = ((ganados * 3 + empatados) / (jugados * 3) * 100).toFixed(1);
-      // Generar HTML
-      document.getElementById("estadisticas_Clausura2024").innerHTML = `
-        <div class="estadisticas-box">
-          <h2>📊 Estadísticas</h2>
-          <ul>
-            <li><strong>Partidos jugados:</strong> ${jugados}</li>
-            <li><strong>Ganados:</strong> ${ganados}</li>
-            <li><strong>Empatados:</strong> ${empatados}</li>
-            <li><strong>Perdidos:</strong> ${perdidos}</li>
-            <li><strong>Goles a favor:</strong> ${golesFavor}</li>
-            <li><strong>Goles en contra:</strong> ${golesContra}</li>
-            <li><strong>Diferencia de goles:</strong> ${diferencia}</li>
-            <li><strong>Efectividad:</strong> ${efectividad}%</li>
-          </ul>
-        </div>
-      `;
-    }
-    cargarEstadisticas();
-  </script>
-
   <footer class="footer" style="color:white;">
     <div class="social-icons">
-      Siguenos en<br> 
+      Siguenos en<br>
       <a href="https://www.instagram.com/fcbarbaros21?igsh=MTJmY3p4YW1nNzM1Yg==" target="_blank">
         <i class="fab fa-instagram"></i>
       </a>
@@ -648,6 +90,49 @@
     <img src="img/auspiciadores/Gussta.png" alt="Gussta" width="100px">
     <p>© 2025 Bárbaros FC - Todos los derechos reservados - Since 2021</p>
   </footer>
-  
+
+  <script src="js/stats.js"></script>
+  <script>
+    // Un campeonato por línea. Para agregar uno nuevo:
+    //   1) copia uno de los bloques <section class="hero">...</section> de arriba
+    //      (el que tiene los 3 <div id="fixture_...">, "scorer_...", "estadisticas_...")
+    //      y cambia el título y los 3 ids por los del campeonato nuevo.
+    //   2) agrega una línea aquí abajo con esos mismos ids y las rutas a los CSV.
+    // Si un campeonato todavía no tiene archivo de goleadores, deja scorerCsv en null.
+    const CAMPEONATOS = [
+      {
+        fixtureCsv: "docs/anteriores/2026/fixture_EntreTiempo_Clausura2026.csv",
+        scorerCsv: "docs/anteriores/2026/scorer_EntreTiempo_Clausura2026.csv",
+        fixtureId: "fixture_Clausura2026", scorerId: "scorer_Clausura2026", statsId: "estadisticas_Clausura2026",
+      },
+      {
+        fixtureCsv: "docs/anteriores/2026/fixture_EntreTiempo_Cuadrangular2026.csv",
+        scorerCsv: "docs/anteriores/2026/scorer_EntreTiempo_Cuadrangular2026.csv",
+        fixtureId: "fixture_Cuadrangular2026", scorerId: "scorer_Cuadrangular2026", statsId: "estadisticas_Cuadrangular2026",
+      },
+      {
+        fixtureCsv: "docs/anteriores/2026/fixture_EntreTiempo_Apertura2026.csv",
+        scorerCsv: "docs/anteriores/2026/scorer_EntreTiempo_Apertura2026.csv",
+        fixtureId: "fixture_Apertura2026", scorerId: "scorer_Apertura2026", statsId: "estadisticas_Apertura2026",
+      },
+      {
+        fixtureCsv: "docs/anteriores/2025/fixture_SoccerS_Clausura2025.csv",
+        scorerCsv: "docs/anteriores/2025/scorer_SoccerS_Clausura2025.csv",
+        fixtureId: "fixture_Clausura2025", scorerId: "scorer_Clausura2025", statsId: "estadisticas_Clausura2025",
+      },
+      {
+        fixtureCsv: "docs/anteriores/2025/fixture_EntreTiempo_Apertura2025.csv",
+        scorerCsv: "docs/anteriores/2025/scorer_EntreTiempo_Apertura2025.csv",
+        fixtureId: "fixture_Apertura2025", scorerId: "scorer_Apertura2025", statsId: "estadisticas_Apertura2025",
+      },
+      {
+        fixtureCsv: "docs/anteriores/2024/fixture_SoccerS_Clausura2024.csv",
+        scorerCsv: null,
+        fixtureId: "fixture_Clausura2024", scorerId: "scorer_Clausura2024", statsId: "estadisticas_Clausura2024",
+      },
+    ];
+
+    CAMPEONATOS.forEach(renderTournamentSection);
+  </script>
 </body>
 </html>
